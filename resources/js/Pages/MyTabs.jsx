@@ -15,56 +15,56 @@ import {
           description: 'Journals and note-taking',
           imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg',
           imageAlt: 'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.',
-          href: '#',
+          href: 'dashboard',
         },
         {
           name: 'Travel',
           description: 'Daily commute essentials',
           imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
           imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
-          href: '#',
+          href: 'dashboard',
         },
         {
             name: 'asd',
             description: 'Daily commute essentials',
             imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
             imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
-            href: '#',
+            href: 'dashboard',
           },
           {
             name: 'Traasdvel',
             description: 'Daily commute essentials',
             imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
             imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
-            href: '#',
+            href: 'dashboard',
           },
           {
             name: 'Travesdl',
             description: 'Daily commute essentials',
             imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
             imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
-            href: '#',
+            href: 'dashboard',
           },
           {
             name: 'Travsdel',
             description: 'Daily commute essentials',
             imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
             imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
-            href: '#',
+            href: 'dashboard',
           },
           {
             name: 'Travesdasdl',
             description: 'Daily commute essentials',
             imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
             imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
-            href: '#',
+            href: 'dashboard',
           },
           {
             name: 'Traveasdasdl',
             description: 'Daily commute essentials',
             imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
             imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
-            href: '#',
+            href: 'dashboard',
           },
       ]
 
@@ -130,8 +130,8 @@ import {
 <div className="space-y-12 lg:grid lg:grid-cols-4 lg:gap-x-6 lg:space-y-0">
   {callouts.map((callout) => (
     <div key={callout.name} className="group pl-2 transition duration-500 hover:scale-125 ease-in-out relative">
-          <a href={callout.href}>
-      <div className="mt-6 relative shadow-lg  shadow-indigo-500/40 overflow-hidden ">
+          <a href={route(callout.href)}>
+      <div className="mt-6 relative shadow-lg shadow-indigo-500/40 overflow-hidden ">
         <img
           src={callout.imageSrc}
           alt={callout.imageAlt}
