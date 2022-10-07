@@ -25,6 +25,7 @@
         "@heroicons/react": "^2.0.11",
         "@material-tailwind/react": "^1.2.4",
         "@tailwindcss/aspect-ratio": "^0.4.2",
-        "daisyui": "^2.31.0"
+        "daisyui": "^2.31.0",
+        "swiper": "^8.4.2"
     }
 }
