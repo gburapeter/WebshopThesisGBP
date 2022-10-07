@@ -8,7 +8,7 @@ import { Tabs2 } from './Tabs2';
 import Footer from '@/Layouts/LayoutComponents/Footer';
 import Header from '@/Layouts/LayoutComponents/Header';
 
-import Carousel2 from '../Components/Carousel2';
+
 
 
 
@@ -57,7 +57,7 @@ export default function Example() {
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
             {/* Replace with your content */}
 
-          <Carousel2 />
+
 
 
 
