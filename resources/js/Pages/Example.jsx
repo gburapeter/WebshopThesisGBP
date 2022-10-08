@@ -11,6 +11,13 @@ import Header from '@/Layouts/LayoutComponents/Header';
 
 import MySwiper from '@/Components/MySwiper';
 
+import Header1 from '../Layouts/LayoutComponents/Header1';
+import Header2 from '../Layouts/LayoutComponents/Header2';
+import { MainPageMobile } from '../Components/MainPageMobile';
+import { ProductCards } from '@/Components/ProductCards';
+import { MobilePhones } from '@/Components/MobilePhones';
+import { Statistics } from '@/Components/Statistics';
+
 
 
 
@@ -31,14 +38,7 @@ function classNames(...classes) {
 export default function Example() {
   return (
     <>
-      {/*
-        This example requires updating your template:
 
-        ```
-        <html class="h-full bg-gray-100">
-        <body class="h-full">
-        ```
-      */}
 
      <div className="drawer">
   <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -48,9 +48,13 @@ export default function Example() {
 
   <div className="min-h-full">
 
-       <Header user={user} />
 
-        <header className="bg-white shadow">
+  <Header2 user={user} />
+  <Header1 user={user} />
+
+
+
+        <header className="bg-primary shadow">
           <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
           </div>
@@ -62,11 +66,20 @@ export default function Example() {
           {/* <Carousel2 /> */}
           <MySwiper />
 
+          <ProductCards />
+
+          <MobilePhones />
+          {/* <MainPageMobile /> */}
+          <Statistics />
+
+
+
+
 
 
       {/* Replace with your content */}
             <div className="px-4 py-6 sm:px-0">
-              <div className="h-96 rounded-lg border-4 border-dashed border-gray-200" />
+
 
             </div>
             {/* /End replace */}
@@ -81,7 +94,7 @@ export default function Example() {
 
   <label htmlFor="my-drawer" className="drawer-overlay"></label>
 
-    <div className=" p-4 overflow-y-auto w-1/2 bg-white">
+    <div className=" p-4 overflow-y-auto w-1/2 bg-gradient-to-r from-yellow-400 via-gray-50 to-teal-300">
         <div className="w-full">
 {/* <Tabs2 color="green"/> */}
     <MyTabs />
