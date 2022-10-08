@@ -33,7 +33,7 @@ export default function Example() {
                         <Header2 user={user} />
                         <Header1 user={user} />
 
-                        <header className="bg-primary shadow">
+                        <header className="bg-transparent shadow">
                             <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
                                 <h1 className="text-3xl font-bold tracking-tight text-gray-900">
                                     Dashboard
@@ -66,7 +66,7 @@ export default function Example() {
                         className="drawer-overlay"
                     ></label>
 
-                    <div className=" p-4 overflow-y-auto w-1/2 bg-gradient-to-r from-yellow-400 via-gray-50 to-teal-300">
+                    <div className=" p-4 overflow-y-auto w-1/2 bg-gradient-to-r from-teal-100 to-rose-100">
                         <div className="w-full">
                             {/* <Tabs2 color="green"/> */}
                             <MyTabs />

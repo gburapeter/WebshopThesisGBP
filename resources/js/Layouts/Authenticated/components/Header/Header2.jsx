@@ -2,17 +2,43 @@ import React from "react";
 
 export default function Header2({ user }) {
     return (
-        <div className="bg-gradient-to-r from-yellow-400 via-gray-50 to-teal-300">
+        <div className="bg-gradient-to-r from-teal-100 to-rose-100">
             <div className="navbar mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="navbar-start">
-                    <a className="btn btn-ghost normal-case  text-xl">
+                <div className="navbar-start ">
+                    {/* <a className="font-semibold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 normal-case text-3xl">
                         Webshop
+                    </a> */}
+                    <a
+                        href="/"
+                        aria-label="Company"
+                        title="Company"
+                        className="btn btn-ghost inline-flex items-center mr-8 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300"
+                    >
+                        <svg
+                            className="w-8 text-teal-accent-400"
+                            viewBox="0 0 24 24"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeMiterlimit="10"
+                            stroke="currentColor"
+                            fill="none"
+                        >
+                            <rect x="3" y="1" width="7" height="12" />
+                            <rect x="3" y="17" width="7" height="6" />
+                            <rect x="14" y="1" width="7" height="6" />
+                            <rect x="14" y="11" width="7" height="12" />
+                        </svg>
+
+                        <span className="font-semibold  normal-case text-3xl">
+                            Webshop
+                        </span>
                     </a>
-                    <img
-                        className="h-10 w-30"
+                    {/* <img
+                        className="h-10 w-30  "
                         src="https://i.ibb.co/0MsKfQR/acfda88101fa9029e571343ddb431eb4-removebg-preview.png"
                         alt="My Happy SVG"
-                    />
+                    /> */}
                 </div>
                 <div className="navbar-center w-1/3  flex-center">
                     <form className="flex w-full  items-center">
@@ -151,6 +177,7 @@ export default function Header2({ user }) {
                     </button>
                 </div>
             </div>
+            <hr className=" border-gray-300" />
         </div>
     );
 }
