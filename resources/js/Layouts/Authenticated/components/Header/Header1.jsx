@@ -9,7 +9,7 @@ const navigation = [
 ];
 export default function Header1({ user }) {
     return (
-        <div className="bg-gradient-to-r from-teal-100 to-rose-100">
+        <div className="bg-gradient-to-r from-sky-100 to-green-200 ">
             <div className="navbar  mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex-1">
                     <a

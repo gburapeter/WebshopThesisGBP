@@ -1,8 +1,9 @@
+import Dropdown from "@/Components/Navigation/Dropdown";
 import React from "react";
 
 export default function Header2({ user }) {
     return (
-        <div className="bg-gradient-to-r from-teal-100 to-rose-100">
+        <div className="bg-gradient-to-r from-sky-100 to-green-200">
             <div className="navbar mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="navbar-start ">
                     {/* <a className="font-semibold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 normal-case text-3xl">
@@ -151,7 +152,17 @@ export default function Header2({ user }) {
                                 <a>Settings</a>
                             </li>
                             <li>
-                                <a>Logout</a>
+                                {/* <a  href={route("logout")}
+                                            method="post"
+                                            as="button">Logout</a> */}
+
+                                <Dropdown.Link
+                                    href={route("logout")}
+                                    method="post"
+                                    as="button"
+                                >
+                                    Log Out
+                                </Dropdown.Link>
                             </li>
                         </ul>
                     </div>
@@ -177,7 +188,7 @@ export default function Header2({ user }) {
                     </button>
                 </div>
             </div>
-            <hr className=" border-gray-300" />
+            <hr className=" border-green-50" />
         </div>
     );
 }

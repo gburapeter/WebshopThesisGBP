@@ -1,7 +1,11 @@
+import { ProductCards } from "@/Pages/Home/components/ProductCards";
+import { Statistics } from "@/Pages/Home/components/Statistics";
+import { MobilePhones } from "./components/MobilePhones";
 import MyTabs from "@/Layouts/Authenticated/components/Drawer/MyTabs";
 import Footer from "@/Layouts/Authenticated/components/Footer/Footer";
 import Header1 from "@/Layouts/Authenticated/components/Header/Header1";
 import Header2 from "@/Layouts/Authenticated/components/Header/Header2";
+import MySwiper from "./components/MySwiper";
 
 const user = {
     name: "Tom Cook",
@@ -14,7 +18,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 
-export default function AuthenticatedLayout({ auth, header, children, title }) {
+export default function Example({ auth, header, children }) {
     return (
         <>
             <div className="drawer">
@@ -29,10 +33,10 @@ export default function AuthenticatedLayout({ auth, header, children, title }) {
                         <Header2 user={user} />
                         <Header1 user={user} />
 
-                        <header className="bg-transparent shadow ">
+                        <header className="bg-transparent shadow">
                             <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
                                 <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-                                    {title}
+                                    Dashboard
                                 </h1>
                             </div>
                         </header>

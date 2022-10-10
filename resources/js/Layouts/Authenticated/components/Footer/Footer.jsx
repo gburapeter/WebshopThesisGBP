@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer({}) {
     return (
-        <footer className="footer footer-center p-10 bg-gradient-to-r from-sky-100 to-green-300 text-base-content rounded">
+        <footer className="footer footer-center p-10 bg-gradient-to-r from-sky-100 to-green-200 text-base-content rounded">
             <div className="grid grid-flow-col gap-4">
                 <a className="link link-hover">About us</a>
                 <a className="link link-hover">Contact</a>

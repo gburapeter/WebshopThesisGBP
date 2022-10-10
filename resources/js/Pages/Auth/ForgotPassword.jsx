@@ -1,8 +1,7 @@
-import React from "react";
-import GuestLayout from "@/Layouts/Guest/GuestLayout";
-import InputError from "@/Components/InputError";
-import PrimaryButton from "@/Components/PrimaryButton";
+import InputError from "@/Components/Form/InputError";
 import TextInput from "@/Components/Form/TextInput";
+import PrimaryButton from "@/Components/PrimaryButton";
+import GuestLayout from "@/Layouts/Guest/GuestLayout";
 import { Head, useForm } from "@inertiajs/inertia-react";
 
 export default function ForgotPassword({ status }) {
@@ -23,11 +22,14 @@ export default function ForgotPassword({ status }) {
     return (
         <GuestLayout>
             <Head title="Forgot Password" />
-
+            <div>
+                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+                    Forgot your password?
+                </h2>
+            </div>
             <div className="mb-4 text-sm text-gray-500 leading-normal">
-                Forgot your password? No problem. Just let us know your email
-                address and we will email you a password reset link that will
-                allow you to choose a new one.
+                No worries. Just type in your email address and we will send you
+                an email with a link to recover your account .
             </div>
 
             {status && (
@@ -49,9 +51,13 @@ export default function ForgotPassword({ status }) {
                 <InputError message={errors.email} className="mt-2" />
 
                 <div className="flex items-center justify-end mt-4">
-                    <PrimaryButton className="ml-4" processing={processing}>
-                        Email Password Reset Link
-                    </PrimaryButton>
+                    <button
+                        className={`ml-4 btn btn-success btn-sm btn-wide ${
+                            processing && "btn loading"
+                        } `}
+                    >
+                        Send reset link
+                    </button>
                 </div>
             </form>
         </GuestLayout>
