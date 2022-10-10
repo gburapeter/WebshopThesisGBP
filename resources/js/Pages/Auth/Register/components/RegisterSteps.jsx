@@ -14,7 +14,7 @@ export const RegisterSteps = ({
                         <div>
                             <div
                                 className={`flex items-center justify-center w-8 h-8 text-xs font-medium border border-black rounded-full ${
-                                    personalInfoStep ? "bg-green-400" : ""
+                                    personalInfoStep ? "bg-green-300" : ""
                                 } `}
                             >
                                 1
@@ -26,7 +26,7 @@ export const RegisterSteps = ({
                         <div className="sm:mr-5">
                             <div
                                 className={`flex items-center justify-center ${
-                                    personalInfoStep ? "bg-green-400" : ""
+                                    personalInfoStep ? "bg-green-300" : ""
                                 } w-16 h-16 my-3 rounded-full bg-indigo-50 sm:w-24 sm:h-24`}
                             >
                                 <svg
@@ -58,7 +58,7 @@ export const RegisterSteps = ({
                         <div>
                             <div
                                 className={`flex items-center justify-center w-8 h-8 text-xs font-medium border border-black rounded-full ${
-                                    usernameStep ? "bg-green-400" : ""
+                                    usernameStep ? "bg-green-300" : ""
                                 } `}
                             >
                                 2
@@ -70,7 +70,7 @@ export const RegisterSteps = ({
                         <div className="sm:mr-5">
                             <div
                                 className={`flex items-center justify-center ${
-                                    usernameStep ? "bg-green-400" : ""
+                                    usernameStep ? "bg-green-300" : ""
                                 } w-16 h-16 my-3 rounded-full bg-indigo-50 sm:w-24 sm:h-24`}
                             >
                                 <svg
@@ -102,7 +102,7 @@ export const RegisterSteps = ({
                         <div>
                             <div
                                 className={`flex items-center justify-center w-8 h-8 text-xs font-medium border border-black rounded-full ${
-                                    addressStep ? "bg-green-400" : ""
+                                    addressStep ? "bg-green-300" : ""
                                 } `}
                             >
                                 3
@@ -114,7 +114,7 @@ export const RegisterSteps = ({
                         <div className="sm:mr-5">
                             <div
                                 className={`flex items-center justify-center ${
-                                    addressStep ? "bg-green-400" : ""
+                                    addressStep ? "bg-green-300" : ""
                                 } w-16 h-16 my-3 rounded-full bg-indigo-50 sm:w-24 sm:h-24`}
                             >
                                 <svg
