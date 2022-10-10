@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Address;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -45,25 +46,28 @@ class RegisteredUserController extends Controller
             'phone' => 'required',
             'country' => 'required',
             'street_name' => 'required',
-            'street_number' => 'required',
+            'street_number' => 'required|numeric',
+            'suite' => 'required',
             'city' => 'required',
             'state' => 'required',
             'postal_code' => 'required',
-
         ]);
 
-
+        $address = Address::create([
+            'country' => $request->country,
+            'street_name' => $request->street_name,
+            'street_number' =>  $request->street_number,
+            'suite' => $request->suite,
+            'city' => $request->city,
+            'state' => $request->state,
+            'postal_code' => $request->postal_code,
+        ]);
         $user = User::create([
             'name' => $request->lastname . ' ' . $request->firstname,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'phone' => $request->phone,
-            'country' => $request->country,
-            'street_name' => $request->street_name,
-            'street_number' => $request->street_number,
-            'city' => $request->city,
-            'state' => $request->state,
-            'postal_code' => $request->postal_code,
+            'address_id' => $address->id,
         ]);
 
 

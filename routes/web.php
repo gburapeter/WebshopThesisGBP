@@ -22,7 +22,7 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-})->middleware([])->name('home');
+})->middleware(['auth', 'verified'])->name('home');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

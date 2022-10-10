@@ -19,6 +19,7 @@ export const RegisterForm = ({
         country: "",
         street_name: "",
         street_number: "",
+        suite: "",
         city: "",
         state: "",
         postal_code: "",
@@ -272,6 +273,27 @@ export const RegisterForm = ({
                                     />
                                     <InputError
                                         message={errors.street_number}
+                                        className="mt-2"
+                                    />
+                                </div>
+
+                                <div className="col-span-2 sm:col-span-2">
+                                    <label
+                                        htmlFor="street-address"
+                                        className="block text-sm font-medium text-gray-700"
+                                    >
+                                        Suite / apt / floor
+                                    </label>
+                                    <input
+                                        type="text"
+                                        value={data.suite}
+                                        className={`mt-1 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm `}
+                                        onChange={(e) =>
+                                            setData("suite", e.target.value)
+                                        }
+                                    />
+                                    <InputError
+                                        message={errors.suite}
                                         className="mt-2"
                                     />
                                 </div>

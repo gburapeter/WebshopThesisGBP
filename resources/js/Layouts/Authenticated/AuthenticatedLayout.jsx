@@ -2,6 +2,7 @@ import MyTabs from "@/Layouts/Authenticated/components/Drawer/MyTabs";
 import Footer from "@/Layouts/Authenticated/components/Footer/Footer";
 import Header1 from "@/Layouts/Authenticated/components/Header/Header1";
 import Header2 from "@/Layouts/Authenticated/components/Header/Header2";
+import { usePage } from "@inertiajs/inertia-react";
 
 const user = {
     name: "Tom Cook",
@@ -14,7 +15,8 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 
-export default function AuthenticatedLayout({ auth, header, children, title }) {
+export default function AuthenticatedLayout({ header, children, title }) {
+    const { auth } = usePage().props;
     return (
         <>
             <div className="drawer">
@@ -26,13 +28,13 @@ export default function AuthenticatedLayout({ auth, header, children, title }) {
 
                 <div className="drawer-content">
                     <div className="min-h-full">
-                        <Header2 user={user} />
-                        <Header1 user={user} />
+                        <Header2 user={auth.user} />
+                        <Header1 user={auth.user} />
 
                         <header className="bg-transparent shadow ">
                             <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
                                 <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-                                    {title}
+                                    {title} {auth.user.name}
                                 </h1>
                             </div>
                         </header>
