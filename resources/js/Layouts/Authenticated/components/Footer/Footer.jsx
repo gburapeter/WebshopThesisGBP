@@ -1,13 +1,36 @@
+import ResponsiveNavLink from "@/Components/Navigation/ResponsiveNavLink";
 import React from "react";
+import NavLink from "../../../../Components/Navigation/NavLink";
+NavLink;
 
 export default function Footer({}) {
     return (
         <footer className="footer footer-center p-10 bg-gradient-to-r from-sky-100 to-green-200 text-base-content rounded">
             <div className="grid grid-flow-col gap-4">
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
+                <ResponsiveNavLink
+                    href={route("home")}
+                    active={route().current("dashboard")}
+                >
+                    About us
+                </ResponsiveNavLink>
+                <ResponsiveNavLink
+                    href={route("home")}
+                    active={route().current("dashboard")}
+                >
+                    Contact
+                </ResponsiveNavLink>
+                <ResponsiveNavLink
+                    href={route("home")}
+                    active={route().current("dashboard")}
+                >
+                    Careers
+                </ResponsiveNavLink>
+                <ResponsiveNavLink
+                    href={route("home")}
+                    active={route().current("dashboard")}
+                >
+                    Support
+                </ResponsiveNavLink>
             </div>
             <div>
                 <div className="grid grid-flow-col gap-4">

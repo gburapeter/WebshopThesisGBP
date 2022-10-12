@@ -1,10 +1,10 @@
 import { ProductCards } from "@/Pages/Home/components/ProductCards";
 import { Statistics } from "@/Pages/Home/components/Statistics";
 import { MobilePhones } from "./components/MobilePhones";
-import MyTabs from "@/Layouts/Authenticated/components/Drawer/MyTabs";
+import MyTabs from "@/Layouts/Authenticated/components/SidebarDrawer/SidebarDrawer";
 import Footer from "@/Layouts/Authenticated/components/Footer/Footer";
-import Header1 from "@/Layouts/Authenticated/components/Header/Header1";
-import Header2 from "@/Layouts/Authenticated/components/Header/Header2";
+import Header1 from "@/Layouts/Authenticated/components/Header/Subbar/Subbar";
+import Header2 from "@/Layouts/Authenticated/components/Header/Navbar/Navbar";
 import MySwiper from "./components/MySwiper";
 
 const user = {

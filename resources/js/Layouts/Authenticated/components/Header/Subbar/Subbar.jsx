@@ -1,3 +1,4 @@
+import ResponsiveNavLink from "@/Components/Navigation/ResponsiveNavLink";
 import React from "react";
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -7,7 +8,7 @@ const navigation = [
     { name: "Team", href: "#", current: false },
     { name: "Projects", href: "#", current: false },
 ];
-export default function Header1({ user }) {
+export default function Subbar({ user }) {
     return (
         <div className="bg-gradient-to-r from-sky-100 to-green-200 ">
             <div className="navbar  mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -47,19 +48,13 @@ export default function Header1({ user }) {
                 <div className="flex-none ">
                     <div className="ml-10 flex items-baseline space-x-4">
                         {navigation.map((item) => (
-                            <a
+                            <ResponsiveNavLink
                                 key={item.name}
                                 href={item.href}
-                                className={classNames(
-                                    item.current
-                                        ? "bg-primary "
-                                        : " hover:bg-primary hover:text-black",
-                                    "px-3 py-2 rounded-md text-sm font-medium "
-                                )}
-                                aria-current={item.current ? "page" : undefined}
+                                active={route().current("dashboard")}
                             >
                                 {item.name}
-                            </a>
+                            </ResponsiveNavLink>
                         ))}
                     </div>
                 </div>

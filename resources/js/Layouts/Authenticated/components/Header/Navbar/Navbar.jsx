@@ -1,14 +1,12 @@
 import Dropdown from "@/Components/Navigation/Dropdown";
 import React from "react";
 
-export default function Header2({ user }) {
+export default function Navbar({ user }) {
     return (
         <div className="bg-gradient-to-r from-sky-100 to-green-200">
             <div className="navbar mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="navbar-start ">
-                    {/* <a className="font-semibold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 normal-case text-3xl">
-                        Webshop
-                    </a> */}
+
                     <a
                         href="/"
                         aria-label="Company"
@@ -35,11 +33,6 @@ export default function Header2({ user }) {
                             Webshop
                         </span>
                     </a>
-                    {/* <img
-                        className="h-10 w-30  "
-                        src="https://i.ibb.co/0MsKfQR/acfda88101fa9029e571343ddb431eb4-removebg-preview.png"
-                        alt="My Happy SVG"
-                    /> */}
                 </div>
                 <div className="navbar-center w-1/3  flex-center">
                     <form className="flex w-full  items-center">

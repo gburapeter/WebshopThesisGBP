@@ -6,7 +6,7 @@ import {
     TabPanel,
 } from "@material-tailwind/react";
 import React from "react";
-export default function MyTabs() {
+export default function SidebarDrawer() {
     const [openTab, setOpenTab] = React.useState(1);
     const callouts = [
         {
