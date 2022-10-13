@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
@@ -38,6 +39,17 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+
+            'categories' => ProductCategory::with('categories')->where('product_category_id', '=', null)->get()->map(function ($category) {
+                return [
+                    'id' => $category->id,
+                    'category_name' => $category->category_name,
+                    'category_code' => $category->category_code,
+                    'subcategories' => $category->categories,
+
+                ];
+            }),
+
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [
                     'location' => $request->url(),

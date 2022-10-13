@@ -32,7 +32,6 @@ export const RegisterForm = ({
     }, []);
 
     useEffect(() => {
-        console.log(data.country);
         data.firstname != "" && data.lastname != "" && data.phone != ""
             ? setPersonalInfoStep(true)
             : setPersonalInfoStep(false);

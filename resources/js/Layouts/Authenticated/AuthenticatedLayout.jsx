@@ -21,6 +21,7 @@ function classNames(...classes) {
 
 export default function AuthenticatedLayout({ header, children, title }) {
     const { auth } = usePage().props;
+
     return (
         <>
             <div className="drawer">
@@ -53,7 +54,7 @@ export default function AuthenticatedLayout({ header, children, title }) {
                         className="drawer-overlay"
                     ></label>
 
-                    <div className=" p-4 overflow-y-auto w-1/2 bg-gradient-to-r from-teal-100 to-rose-100">
+                    <div className=" p-4 overflow-y-auto w-1/2 bg-gradient-to-r from-sky-100 to-green-200">
                         <div className="w-full">
                             <SidebarDrawer />
                         </div>

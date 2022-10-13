@@ -1,0 +1,234 @@
+
+
+{
+    "productCategories": [
+        {
+            "category_name": "Photo-video",
+            "category_code": "PHV",
+            "category_description": "home",
+            "subcategories": [
+                {
+                    "category_name": "Drones",
+                    "category_code": "DR",
+                    "category_description": "home",
+                    "image_path":"https://www5.djicdn.com/cms/uploads/7a800dc93ffa6a45af04c2b49a75a4af.png"
+
+                },
+                {
+                    "category_name": "Digital cameras",
+                    "category_code": "DC",
+                    "category_description": "home",
+                    "image_path":"https://petapixel.com/assets/uploads/2022/01/The-Best-Used-Digital-Cameras-to-Buy-in-2022.jpg"
+
+                }
+
+              ]
+        },
+        {
+            "category_name": "Laptops",
+            "category_code": "LA",
+            "category_description": "home",
+
+            "subcategories": [
+                {
+                    "category_name": "Macbook",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":"https://cdn.wccftech.com/wp-content/uploads/2016/10/MacBook-Pro-2016-logo.jpg"
+
+
+                },
+                {
+                    "category_name": "Asus",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":"https://www.digiprime.hu/images/stories/virtuemart/product/ASUS-ZENBOOK-14X-UX5400-NUMPAD-PINE-GREY-02-digiprime.hu.jpg"
+
+
+                },
+                {
+                    "category_name": "Dell",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":"https://www.cnet.com/a/img/resize/d4c992259e32f3c0f974ba29e62e9aa8422bd3b7/hub/2022/07/07/63546f99-4d45-49e2-b2fb-55e919287e24/dell-xps-17-9720-2022-0773.jpg?auto=webp&fit=crop&height=900&width=1200"
+
+
+                },
+                {
+                    "category_name": "HP",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":"https://www.xda-developers.com/files/2021/04/Best-HP-laptops.jpg"
+
+
+                },
+                {
+                    "category_name": "Lenovo",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":"https://5.imimg.com/data5/RU/OT/MY-70603318/lenova-laptop-500x500.jpg"
+
+                },
+                {
+                    "category_name": "Laptop accessories",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":"https://femina.wwmindia.com/content/2021/jan/laptop1611219655.jpg"
+
+                }
+
+              ]
+
+        },
+        {
+            "category_name": "Mobile phones",
+            "category_code": "fa-solid fa-apple-whole",
+            "category_description": "home",
+
+            "subcategories": [
+                {
+                    "category_name": "Apple",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+                },
+                {
+                    "category_name": "Huawei",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+                },
+                {
+                    "category_name": "Samsung",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+
+                },
+                {
+                    "category_name": "Xiaomi",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+
+                },
+
+                {
+                    "category_name": "Nokia",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+
+                },
+                {
+                    "category_name": "Mobile accessories",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+                }
+
+              ]
+
+        },
+        {
+            "category_name": "Gaming",
+            "category_code": "fa-solid fa-apple-whole",
+            "category_description": "home",
+
+            "subcategories": [
+                {
+                    "category_name": "Gaming chairs",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+
+                },
+                {
+                    "category_name": "Gaming computers",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+                },
+                {
+                    "category_name": "Mouses",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+
+                },
+                {
+                    "category_name": "Keyboards",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+
+                },
+                {
+                    "category_name": "Headsets",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+
+                }
+              ]
+        },
+        {
+            "category_name": "Console & entertainment",
+            "category_code": "fa-solid fa-apple-whole",
+            "category_description": "home",
+
+            "subcategories": [
+                {
+                    "category_name": "Xbox consoles",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+
+                },
+                {
+                    "category_name": "Play station consoles",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+                },
+                {
+                    "category_name": "Xbox games",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+
+                },
+                {
+                    "category_name": "Play station games",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                    "image_path":""
+
+
+                },
+                {
+                    "category_name": "Console accessories",
+                    "category_code": "fa-solid fa-apple-whole",
+                    "category_description": "home",
+                     "image_path":""
+
+
+                }
+              ]
+        }
+    ]
+}

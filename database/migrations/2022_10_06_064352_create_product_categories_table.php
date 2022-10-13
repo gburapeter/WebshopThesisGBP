@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('product_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('category_name');
+            $table->string('category_code');
+            $table->string('category_description');
+            $table->string('image_path')->nullable();
+            $table->unsignedBigInteger('product_category_id')->nullable();
+            $table->foreign('product_category_id')->references('id')->on('product_categories');
             $table->timestamps();
         });
     }
