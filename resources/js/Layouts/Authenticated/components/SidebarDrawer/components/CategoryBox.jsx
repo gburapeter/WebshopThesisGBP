@@ -16,7 +16,7 @@ export const CategoryBox = ({ uniqueID, path, category_name, image_path }) => {
                             className=" object-cover w-64 h-32 border border-gray-300 "
                         />
                     </div>
-                    <h3 className="mt-2 text-center text-sm text-gray-500">
+                    <h3 className="mt-2 text-center font-extrabold text-md text-black">
                         <span className="" />
                         {category_name}
                     </h3>
