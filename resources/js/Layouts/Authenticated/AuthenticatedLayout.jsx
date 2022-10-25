@@ -12,8 +12,8 @@ export default function AuthenticatedLayout({ header, children, title }) {
     const { auth } = usePage().props;
 
     return (
-        <>
-            <div className="drawer">
+        <div>
+            <div className="drawer ">
                 <input
                     id="my-drawer"
                     type="checkbox"
@@ -27,10 +27,12 @@ export default function AuthenticatedLayout({ header, children, title }) {
 
                         {/* <Header title={title} message={auth.user.name} /> */}
                         <main>
-                            <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+                        <div className="relative min-h-full shadow-2xl overflow-y-auto bg-white mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+
                                 {children}
                             </div>
                         </main>
+                        <Footer />
                     </div>
                 </div>
                 <div className="drawer-side">
@@ -46,7 +48,9 @@ export default function AuthenticatedLayout({ header, children, title }) {
                     </div>
                 </div>
             </div>
-            <Footer />
-        </>
+
+
+
+        </div>
     );
 }
