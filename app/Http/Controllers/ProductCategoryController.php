@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductCategoryRequest;
 use App\Http\Requests\UpdateProductCategoryRequest;
+use App\Models\Product;
 use App\Models\ProductCategory;
+use Inertia\Inertia;
 
 class ProductCategoryController extends Controller
 {
@@ -15,7 +17,6 @@ class ProductCategoryController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -47,8 +48,16 @@ class ProductCategoryController extends Controller
      */
     public function show(ProductCategory $productCategory)
     {
-        //
+        return Inertia::render('ProductCategories/Show', [
+            'productCategory' => $productCategory,
+            // 'products' => $productCategory->products
+            'products' => Product::paginate(9)
+
+        ]);
     }
+
+
+
 
     /**
      * Show the form for editing the specified resource.

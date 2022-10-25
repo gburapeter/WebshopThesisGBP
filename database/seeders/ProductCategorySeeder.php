@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ProductCategory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -18,13 +19,26 @@ class ProductCategorySeeder extends Seeder
         $productCategoriesJSON = file_get_contents(base_path('resources/js/Data/SeederData/ProductCategories.json'));
         $categoriesData = json_decode($productCategoriesJSON);
 
-        dd($categoriesData[0]->productCategories);
-        foreach ($categoriesData[0]->productCategories as $productCategory) {
-            DB::table('product_categories')->insert([
+
+        foreach ($categoriesData->productCategories as $productCategory) {
+
+            $category = ProductCategory::create([
                 'category_name' => $productCategory->category_name,
                 'category_code' => $productCategory->category_code,
                 'category_description' => $productCategory->category_description,
             ]);
+            if ($productCategory->subcategories) {
+                foreach ($productCategory->subcategories as $subCategory) {
+                    $category->categories()->save(
+                        ProductCategory::create([
+                            'category_name' => $subCategory->category_name,
+                            'category_code' => $subCategory->category_code,
+                            'category_description' => $subCategory->category_description,
+                            'image_path' => $subCategory->image_path,
+                        ])
+                    );
+                }
+            }
         }
     }
 }

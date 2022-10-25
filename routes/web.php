@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -23,6 +25,15 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 })->middleware(['auth', 'verified'])->name('home');
+
+Route::resource('categories', ProductCategoryController::class)
+    ->parameters([
+        'categories' => 'product_category'
+    ]);
+
+Route::resource('products', ProductController::class);
+
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

@@ -14,7 +14,7 @@ export default function SidebarDrawer() {
     const [selectedTab, setSelectedTab] = useTabs(categoriesArr);
     return (
         <>
-            <nav className="flex border-b border-gray-300">
+            <nav className="flex border-b justify-between border-gray-300 ">
                 {categories.map(
                     ({
                         id,
@@ -53,7 +53,7 @@ export default function SidebarDrawer() {
                                                 key={id}
                                                 category_name={category_name}
                                                 image_path={image_path}
-                                                path="home"
+                                                category={id}
                                             />
                                         )
                                     )}

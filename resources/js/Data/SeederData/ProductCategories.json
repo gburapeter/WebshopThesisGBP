@@ -2,28 +2,7 @@
 
 {
     "productCategories": [
-        {
-            "category_name": "Photo-video",
-            "category_code": "PHV",
-            "category_description": "home",
-            "subcategories": [
-                {
-                    "category_name": "Drones",
-                    "category_code": "DR",
-                    "category_description": "home",
-                    "image_path":"https://www5.djicdn.com/cms/uploads/7a800dc93ffa6a45af04c2b49a75a4af.png"
 
-                },
-                {
-                    "category_name": "Digital cameras",
-                    "category_code": "DC",
-                    "category_description": "home",
-                    "image_path":"https://petapixel.com/assets/uploads/2022/01/The-Best-Used-Digital-Cameras-to-Buy-in-2022.jpg"
-
-                }
-
-              ]
-        },
         {
             "category_name": "Laptops",
             "category_code": "LA",
@@ -228,6 +207,28 @@
 
 
                 }
+              ]
+        },
+        {
+            "category_name": "Photo-video",
+            "category_code": "PHV",
+            "category_description": "home",
+            "subcategories": [
+                {
+                    "category_name": "Drones",
+                    "category_code": "DR",
+                    "category_description": "home",
+                    "image_path":"https://www5.djicdn.com/cms/uploads/7a800dc93ffa6a45af04c2b49a75a4af.png"
+
+                },
+                {
+                    "category_name": "Digital cameras",
+                    "category_code": "DC",
+                    "category_description": "home",
+                    "image_path":"https://petapixel.com/assets/uploads/2022/01/The-Best-Used-Digital-Cameras-to-Buy-in-2022.jpg"
+
+                }
+
               ]
         }
     ]

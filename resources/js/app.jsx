@@ -1,7 +1,7 @@
 import "./bootstrap";
 import "../css/app.css";
 import Layout from "./Layout";
-
+import AuthenticatedLayout from "./Layouts/Authenticated/AuthenticatedLayout";
 import React from "react";
 import { render } from "react-dom";
 import { createInertiaApp } from "@inertiajs/inertia-react";
@@ -10,7 +10,7 @@ import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 
 const appName =
     window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
-
+const AuthenticatedTemplate = (page) => <AuthenticatedLayout children={page} />;
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => {
@@ -19,9 +19,12 @@ createInertiaApp({
             import.meta.glob("./Pages/**/*.jsx")
         );
 
-        // page.then((module) => {
-        //     module.default.layout = module.default.layout || Layout;
-        // });
+        page.then((module) => {
+            if (!name.startsWith("Auth/")) {
+                module.default.layout =
+                    module.default.layout || AuthenticatedTemplate;
+            }
+        });
 
         return page;
     },

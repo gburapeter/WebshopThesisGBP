@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" data-theme="emerald" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="" data-theme="emerald" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">

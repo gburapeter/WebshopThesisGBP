@@ -1,0 +1,73 @@
+
+
+{
+    "products": [
+
+        {
+            "product_name": "Macbook Air (M1, 2020)",
+            "product_price": "999",
+            "sku": "1",
+            "description":"Macbook",
+            "image_path": "https://istyle.hu/media/catalog/product/cache/image/700x700/e9c3970ab036de70892d86c6d221abfe/m/a/macbook_air_space_gray_pdp_image_position-1_m1_chip__usen_1.jpg",
+            "product_category_id":"2"
+
+        },
+        {
+            "product_name": "Macbook Air (M2, 2022)",
+            "product_price": "1199",
+            "sku": "1",
+            "description":"Macbook",
+            "image_path": "https://istyle.hu/media/catalog/product/cache/image/700x700/e9c3970ab036de70892d86c6d221abfe/m/a/macbook_air_13_in_space_gray_pdp_image_position-1__wwen_5.jpg",
+            "product_category_id":"2"
+
+        },
+        {
+            "product_name": "MacBook Air (Retina, 2020)",
+            "product_price": "1099",
+            "sku": "1",
+            "description":"Macbook",
+            "image_path": "https://istyle.hu/media/catalog/product/cache/image/700x700/e9c3970ab036de70892d86c6d221abfe/m/a/macbook_air_13_in_starlight_pdp_image_position-1__wwen_5.jpg",
+            "product_category_id":"2"
+
+        },
+        {
+            "product_name": "MacBook Pro 13-in. (M2, 2022)",
+            "product_price": "1299",
+            "sku": "1",
+            "description":"Macbook",
+            "image_path": "https://images.euronics.hu/product_images/800x600/resize/1_0i039qwk.png?v=1",
+            "product_category_id":"2"
+
+        },
+        {
+            "product_name": "MacBook Pro 13-in. (M1, 2020)",
+            "product_price": "1299",
+            "sku": "1",
+            "description":"Macbook",
+            "image_path": "https://images.euronics.hu/product_images/800x600/resize/9750409052190_h32ahl75.jpg?v=2",
+            "product_category_id":"2"
+
+        },
+        {
+            "product_name": "MacBook Pro 14-in. (M1, 2021)",
+            "product_price": "1999",
+            "sku": "1",
+            "description":"Macbook",
+            "image_path": "https://istyle.hu/media/catalog/product/cache/image/700x700/e9c3970ab036de70892d86c6d221abfe/m/a/macbook_pro_14-in_silver_pdp_image_position-1__wwen_1_4.jpg",
+            "product_category_id":"2"
+
+        },
+        {
+            "product_name": "MacBook Pro 16-in. (M1, 2021)",
+            "product_price": "2699",
+            "sku": "1",
+            "description":"Macbook",
+            "image_path": "https://istyle.hu/media/catalog/product/cache/image/700x700/e9c3970ab036de70892d86c6d221abfe/m/a/macbook_pro_16-in_space_gray_pdp_image_position-1__wwen_1_1.jpg",
+            "product_category_id":"2"
+
+        }
+
+
+
+    ]
+}

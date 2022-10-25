@@ -4,7 +4,7 @@ import SearchBar from "./components/SearchBar";
 
 export default function Navbar({ user }) {
     return (
-        <div className="bg-gradient-to-r from-sky-100 to-green-200">
+        <div className="bg-gradient-to-r from-cyan-50 to-rose-50">
             <div className="navbar mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="navbar-start ">
                     <a

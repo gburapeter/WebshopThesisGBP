@@ -55,7 +55,7 @@ const LoginImage = () => {
         <img
             alt="Pattern"
             src="https://media.istockphoto.com/photos/online-shopping-and-payment-man-using-tablet-with-shopping-cart-icon-picture-id1206800961?b=1&k=20&m=1206800961&s=612x612&w=0&h=ifVzX5ZKHd6yEr5pJabNLId39gQusitJHvKn1OcjJqY="
-            class="absolute inset-0 h-full w-full object"
+            className="absolute inset-0 h-full w-full object"
         />
     );
 };
@@ -88,7 +88,7 @@ const LoginForm = ({ status, canResetPassword }) => {
         post(route("login"));
     };
     return (
-        <div class="">
+        <div className="">
             {status && (
                 <div className="mb-4 font-medium text-sm text-green-600">
                     {status}
@@ -96,11 +96,11 @@ const LoginForm = ({ status, canResetPassword }) => {
             )}
             <ApplicationLogo title="Home" />
 
-            <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
+            <h1 className="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
                 Welcome to our webshop!
             </h1>
 
-            <p class="mt-4 mb-4 leading-relaxed text-gray-500">
+            <p className="mt-4 mb-4 leading-relaxed text-gray-500">
                 Please login down below or press{" "}
                 <Link
                     href={route("register")}
