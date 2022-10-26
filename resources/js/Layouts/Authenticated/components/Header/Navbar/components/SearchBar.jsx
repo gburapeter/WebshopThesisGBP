@@ -31,31 +31,31 @@ const SearchBar = () => {
                 </div>
             </form> */}
             <form className="flex w-full  items-center">
-                <div class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
-                    <div class="md:flex">
-                        <div class="w-96 ">
-                            <div class="relative">
+                <div className="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
+                    <div className="md:flex">
+                        <div className="w-96 ">
+                            <div className="relative">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
-                                    stroke-width="1.5"
+                                    strokeWidth="1.5"
                                     stroke="currentColor"
-                                    class="w-6 h-6 absolute text-gray-400 top-4 left-4"
+                                    className="w-6 h-6 absolute text-gray-400 top-4 left-4"
                                 >
                                     <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                         d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
                                     />
                                 </svg>
-                                <i class="absolute fa fa-search text-gray-400 top-5 left-4"></i>
+                                <i className="absolute fa fa-search text-gray-400 top-5 left-4"></i>
                                 <input
                                     type="text"
-                                    class="bg-white h-14 w-full px-12 rounded-lg focus:outline-none hover:cursor-pointer"
+                                    className="bg-white h-14 w-full px-12 rounded-lg focus:outline-none hover:cursor-pointer"
                                     name=""
                                 />
-                                <span class="absolute top-4 right-5 border-l pl-4"></span>
+                                <span className="absolute top-4 right-5 border-l pl-4"></span>
                             </div>
                         </div>
                     </div>

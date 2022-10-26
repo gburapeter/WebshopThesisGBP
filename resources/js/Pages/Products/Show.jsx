@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
+import Features from "./components/Features";
 
 const product = {
     name: "Basic Tee 6-Pack",
@@ -59,280 +60,339 @@ const reviews = { href: "#", average: 4, totalCount: 117 };
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
+
 const Show = () => {
     const [selectedColor, setSelectedColor] = useState(product.colors[0]);
     const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
 
     return (
-        <>
-            <section>
-                <div class="relative mx-auto max-w-screen-xl px-4 py-8">
-                    <div>
-                        <h1 class="text-2xl font-bold lg:text-3xl">
-                            Simple Clothes Basic Tee
-                        </h1>
+        <div className="bg-white">
+            <div className="pt-6">
+                <nav aria-label="Breadcrumb">
+                    <ol
+                        role="list"
+                        className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
+                    >
+                        {product.breadcrumbs.map((breadcrumb) => (
+                            <li key={breadcrumb.id}>
+                                <div className="flex items-center">
+                                    <a
+                                        href={breadcrumb.href}
+                                        className="mr-2 text-sm font-medium text-gray-900"
+                                    >
+                                        {breadcrumb.name}
+                                    </a>
+                                    <svg
+                                        width={16}
+                                        height={20}
+                                        viewBox="0 0 16 20"
+                                        fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        aria-hidden="true"
+                                        className="h-5 w-4 text-gray-300"
+                                    >
+                                        <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+                                    </svg>
+                                </div>
+                            </li>
+                        ))}
+                        <li className="text-sm">
+                            <a
+                                href={product.href}
+                                aria-current="page"
+                                className="font-medium text-gray-500 hover:text-gray-600"
+                            >
+                                {product.name}
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
 
-                        <p class="mt-1 text-sm text-gray-500">SKU: #012345</p>
+                {/* Image gallery */}
+                <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+                    <div className="aspect-w-3 aspect-h-4 hidden overflow-hidden rounded-lg lg:block">
+                        <img
+                            src={product.images[0].src}
+                            alt={product.images[0].alt}
+                            className="h-full w-full object-cover object-center"
+                        />
+                    </div>
+                    <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
+                        <div className="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
+                            <img
+                                src={product.images[1].src}
+                                alt={product.images[1].alt}
+                                className="h-full w-full object-cover object-center"
+                            />
+                        </div>
+                        <div className="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
+                            <img
+                                src={product.images[2].src}
+                                alt={product.images[2].alt}
+                                className="h-full w-full object-cover object-center"
+                            />
+                        </div>
+                    </div>
+                    <div className="aspect-w-4 aspect-h-5 sm:overflow-hidden sm:rounded-lg lg:aspect-w-3 lg:aspect-h-4">
+                        <img
+                            src={product.images[3].src}
+                            alt={product.images[3].alt}
+                            className="h-full w-full object-cover object-center"
+                        />
+                    </div>
+                </div>
+
+                {/* Product info */}
+                <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
+                    <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+                        <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+                            {product.name}
+                        </h1>
                     </div>
 
-                    <div class="grid gap-8 lg:grid-cols-4 lg:items-start">
-                        <div class="lg:col-span-3">
-                            <div class="relative mt-4">
-                                <img
-                                    alt="Tee"
-                                    src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                    class="h-72 w-full rounded-xl object-cover lg:h-[540px]"
-                                />
+                    {/* Options */}
+                    <div className="mt-4 lg:row-span-3 lg:mt-0">
+                        <h2 className="sr-only">Product information</h2>
+                        <p className="text-3xl tracking-tight text-gray-900">
+                            {product.price}
+                        </p>
 
-                                <div class="absolute bottom-4 left-1/2 inline-flex -translate-x-1/2 items-center rounded-full bg-black/75 px-3 py-1.5 text-white">
-                                    <svg
-                                        class="h-4 w-4"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                        {/* Reviews */}
+                        <div className="mt-6">
+                            <h3 className="sr-only">Reviews</h3>
+                            <div className="flex items-center">
+                                <div className="flex items-center">
+                                    {[0, 1, 2, 3, 4].map((rating) => (
+                                        <StarIcon
+                                            key={rating}
+                                            className={classNames(
+                                                reviews.average > rating
+                                                    ? "text-gray-900"
+                                                    : "text-gray-200",
+                                                "h-5 w-5 flex-shrink-0"
+                                            )}
+                                            aria-hidden="true"
                                         />
-                                    </svg>
-
-                                    <span class="ml-1.5 text-xs">
-                                        {" "}
-                                        Hover to zoom{" "}
-                                    </span>
+                                    ))}
                                 </div>
+                                <p className="sr-only">
+                                    {reviews.average} out of 5 stars
+                                </p>
+                                <a
+                                    href={reviews.href}
+                                    className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                                >
+                                    {reviews.totalCount} reviews
+                                </a>
+                            </div>
+                        </div>
+
+                        <form className="mt-10">
+                            {/* Colors */}
+                            <div>
+                                <h3 className="text-sm font-medium text-gray-900">
+                                    Color
+                                </h3>
+
+                                <RadioGroup
+                                    value={selectedColor}
+                                    onChange={setSelectedColor}
+                                    className="mt-4"
+                                >
+                                    <RadioGroup.Label className="sr-only">
+                                        {" "}
+                                        Choose a color{" "}
+                                    </RadioGroup.Label>
+                                    <div className="flex items-center space-x-3">
+                                        {product.colors.map((color) => (
+                                            <RadioGroup.Option
+                                                key={color.name}
+                                                value={color}
+                                                className={({
+                                                    active,
+                                                    checked,
+                                                }) =>
+                                                    classNames(
+                                                        color.selectedClass,
+                                                        active && checked
+                                                            ? "ring ring-offset-1"
+                                                            : "",
+                                                        !active && checked
+                                                            ? "ring-2"
+                                                            : "",
+                                                        "-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none"
+                                                    )
+                                                }
+                                            >
+                                                <RadioGroup.Label
+                                                    as="span"
+                                                    className="sr-only"
+                                                >
+                                                    {" "}
+                                                    {color.name}{" "}
+                                                </RadioGroup.Label>
+                                                <span
+                                                    aria-hidden="true"
+                                                    className={classNames(
+                                                        color.class,
+                                                        "h-8 w-8 border border-black border-opacity-10 rounded-full"
+                                                    )}
+                                                />
+                                            </RadioGroup.Option>
+                                        ))}
+                                    </div>
+                                </RadioGroup>
                             </div>
 
-                            <ul class="mt-1 flex gap-1">
-                                <li>
-                                    <img
-                                        alt="Tee"
-                                        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                        class="h-16 w-16 rounded-md object-cover"
-                                    />
-                                </li>
-
-                                <li>
-                                    <img
-                                        alt="Tee"
-                                        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                        class="h-16 w-16 rounded-md object-cover"
-                                    />
-                                </li>
-
-                                <li>
-                                    <img
-                                        alt="Tee"
-                                        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                        class="h-16 w-16 rounded-md object-cover"
-                                    />
-                                </li>
-
-                                <li>
-                                    <img
-                                        alt="Tee"
-                                        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                        class="h-16 w-16 rounded-md object-cover"
-                                    />
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="lg:sticky lg:top-0">
-                            <form class="space-y-4 lg:pt-8">
-                                <fieldset>
-                                    <legend class="text-lg font-bold">
-                                        Color
-                                    </legend>
-
-                                    <div class="mt-2 flex gap-1">
-                                        <label
-                                            for="color_green"
-                                            class="cursor-pointer"
-                                        >
-                                            <input
-                                                type="radio"
-                                                id="color_green"
-                                                name="color"
-                                                class="peer sr-only"
-                                                checked
-                                            />
-
-                                            <span class="block h-6 w-6 rounded-full border border-gray-200 bg-green-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"></span>
-                                        </label>
-
-                                        <label
-                                            for="color_blue"
-                                            class="cursor-pointer"
-                                        >
-                                            <input
-                                                type="radio"
-                                                id="color_blue"
-                                                name="color"
-                                                class="peer sr-only"
-                                            />
-
-                                            <span class="block h-6 w-6 rounded-full border border-gray-200 bg-blue-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"></span>
-                                        </label>
-
-                                        <label
-                                            for="color_pink"
-                                            class="cursor-pointer"
-                                        >
-                                            <input
-                                                type="radio"
-                                                id="color_pink"
-                                                name="color"
-                                                class="peer sr-only"
-                                            />
-
-                                            <span class="block h-6 w-6 rounded-full border border-gray-200 bg-pink-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"></span>
-                                        </label>
-
-                                        <label
-                                            for="color_red"
-                                            class="cursor-pointer"
-                                        >
-                                            <input
-                                                type="radio"
-                                                id="color_red"
-                                                name="color"
-                                                class="peer sr-only"
-                                            />
-
-                                            <span class="block h-6 w-6 rounded-full border border-gray-200 bg-red-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"></span>
-                                        </label>
-
-                                        <label
-                                            for="color_indigo"
-                                            class="cursor-pointer"
-                                        >
-                                            <input
-                                                type="radio"
-                                                id="color_indigo"
-                                                name="color"
-                                                class="peer sr-only"
-                                            />
-
-                                            <span class="block h-6 w-6 rounded-full border border-gray-200 bg-indigo-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"></span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset>
-                                    <legend class="text-lg font-bold">
-                                        Material
-                                    </legend>
-
-                                    <div class="mt-2 flex gap-1">
-                                        <label
-                                            for="material_cotton"
-                                            class="cursor-pointer"
-                                        >
-                                            <input
-                                                type="radio"
-                                                id="material_cotton"
-                                                name="material"
-                                                class="peer sr-only"
-                                                checked
-                                            />
-
-                                            <span class="block rounded-full border border-gray-200 px-3 py-1 text-xs peer-checked:bg-gray-100">
-                                                Cotton
-                                            </span>
-                                        </label>
-
-                                        <label
-                                            for="material_wool"
-                                            class="cursor-pointer"
-                                        >
-                                            <input
-                                                type="radio"
-                                                id="material_wool"
-                                                name="material"
-                                                class="peer sr-only"
-                                                checked
-                                            />
-
-                                            <span class="block rounded-full border border-gray-200 px-3 py-1 text-xs peer-checked:bg-gray-100">
-                                                Wool
-                                            </span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <div class="rounded border bg-gray-100 p-4">
-                                    <p class="text-sm">
-                                        <span class="block">
-                                            {" "}
-                                            Pay as low as $3/mo with 0% APR.{" "}
-                                        </span>
-
-                                        <a
-                                            href=""
-                                            class="mt-1 inline-block underline"
-                                        >
-                                            {" "}
-                                            Find out more{" "}
-                                        </a>
-                                    </p>
+                            {/* Sizes */}
+                            <div className="mt-10">
+                                <div className="flex items-center justify-between">
+                                    <h3 className="text-sm font-medium text-gray-900">
+                                        Size
+                                    </h3>
+                                    <a
+                                        href="#"
+                                        className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                                    >
+                                        Size guide
+                                    </a>
                                 </div>
 
-                                <div>
-                                    <p class="text-xl font-bold">$19.99</p>
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    class="w-full rounded bg-red-700 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white"
+                                <RadioGroup
+                                    value={selectedSize}
+                                    onChange={setSelectedSize}
+                                    className="mt-4"
                                 >
-                                    Add to cart
-                                </button>
+                                    <RadioGroup.Label className="sr-only">
+                                        {" "}
+                                        Choose a size{" "}
+                                    </RadioGroup.Label>
+                                    <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
+                                        {product.sizes.map((size) => (
+                                            <RadioGroup.Option
+                                                key={size.name}
+                                                value={size}
+                                                disabled={!size.inStock}
+                                                className={({ active }) =>
+                                                    classNames(
+                                                        size.inStock
+                                                            ? "bg-white shadow-sm text-gray-900 cursor-pointer"
+                                                            : "bg-gray-50 text-gray-200 cursor-not-allowed",
+                                                        active
+                                                            ? "ring-2 ring-indigo-500"
+                                                            : "",
+                                                        "group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6"
+                                                    )
+                                                }
+                                            >
+                                                {({ active, checked }) => (
+                                                    <>
+                                                        <RadioGroup.Label as="span">
+                                                            {size.name}
+                                                        </RadioGroup.Label>
+                                                        {size.inStock ? (
+                                                            <span
+                                                                className={classNames(
+                                                                    active
+                                                                        ? "border"
+                                                                        : "border-2",
+                                                                    checked
+                                                                        ? "border-indigo-500"
+                                                                        : "border-transparent",
+                                                                    "pointer-events-none absolute -inset-px rounded-md"
+                                                                )}
+                                                                aria-hidden="true"
+                                                            />
+                                                        ) : (
+                                                            <span
+                                                                aria-hidden="true"
+                                                                className="pointer-events-none absolute -inset-px rounded-md border-2 border-gray-200"
+                                                            >
+                                                                <svg
+                                                                    className="absolute inset-0 h-full w-full stroke-2 text-gray-200"
+                                                                    viewBox="0 0 100 100"
+                                                                    preserveAspectRatio="none"
+                                                                    stroke="currentColor"
+                                                                >
+                                                                    <line
+                                                                        x1={0}
+                                                                        y1={100}
+                                                                        x2={100}
+                                                                        y2={0}
+                                                                        vectorEffect="non-scaling-stroke"
+                                                                    />
+                                                                </svg>
+                                                            </span>
+                                                        )}
+                                                    </>
+                                                )}
+                                            </RadioGroup.Option>
+                                        ))}
+                                    </div>
+                                </RadioGroup>
+                            </div>
 
-                                <button
-                                    type="button"
-                                    class="w-full rounded border border-gray-300 bg-gray-100 px-6 py-3 text-sm font-bold uppercase tracking-wide"
-                                >
-                                    Notify when on sale
-                                </button>
-                            </form>
+                            <button
+                                type="submit"
+                                className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                            >
+                                Add to bag
+                            </button>
+                        </form>
+                    </div>
+
+                    <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">
+                        {/* Description and details */}
+                        <div>
+                            <h3 className="sr-only">Description</h3>
+
+                            <div className="space-y-6">
+                                <p className="text-base text-gray-900">
+                                    {product.description}
+                                </p>
+                            </div>
                         </div>
 
-                        <div class="lg:col-span-3">
-                            <div class="prose max-w-none [&>iframe]:mt-6 [&>iframe]:aspect-video [&>iframe]:w-full [&>iframe]:rounded-xl">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Autem ad labore nostrum, a
-                                    explicabo iste est dolorem deserunt id ullam
-                                    magni accusamus saepe, nulla sed sint
-                                    reiciendis, aperiam cumque officiis!
-                                </p>
+                        <div className="mt-10">
+                            <h3 className="text-sm font-medium text-gray-900">
+                                Highlights
+                            </h3>
 
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Modi eveniet ipsam
-                                    mollitia nesciunt illo! Suscipit, corrupti!
-                                </p>
-
-                                <h2>Features</h2>
-
-                                <ul>
-                                    <li>Smooth neck design</li>
-                                    <li>Breathable fabric</li>
-                                    <li>Odour prevention</li>
-                                    <li>Made from recycled materials</li>
+                            <div className="mt-4">
+                                <ul
+                                    role="list"
+                                    className="list-disc space-y-2 pl-4 text-sm"
+                                >
+                                    {product.highlights.map((highlight) => (
+                                        <li
+                                            key={highlight}
+                                            className="text-gray-400"
+                                        >
+                                            <span className="text-gray-600">
+                                                {highlight}
+                                            </span>
+                                        </li>
+                                    ))}
                                 </ul>
+                            </div>
+                        </div>
+
+                        <div className="mt-10">
+                            <h2 className="text-sm font-medium text-gray-900">
+                                Details
+                            </h2>
+
+                            <div className="mt-4 space-y-6">
+                                <p className="text-sm text-gray-600">
+                                    {product.details}
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </>
+                <Features />
+            </div>
+        </div>
     );
 };
-
 export default Show;

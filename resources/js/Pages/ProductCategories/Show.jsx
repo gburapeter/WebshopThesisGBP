@@ -4,7 +4,7 @@ import ProductsList from "../Products/components/ProductsList";
 
 const Show = ({ productCategory, products }) => {
     return (
-        <div>
+        <div className="bg-white ">
             <ProductsList products={products} />
         </div>
     );
