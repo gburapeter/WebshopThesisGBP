@@ -27,6 +27,7 @@
         "@tailwindcss/aspect-ratio": "^0.4.2",
         "daisyui": "^2.31.0",
         "react-headless-tabs": "^6.0.2",
+        "react-reveal": "^1.2.2",
         "swiper": "^8.4.2"
     }
 }

@@ -2,7 +2,7 @@ import Dropdown from "@/Components/Navigation/Dropdown";
 import React from "react";
 import SearchBar from "./components/SearchBar";
 
-export default function Navbar({ user }) {
+export default function Navbar({ user, open, setOpen }) {
     return (
         <div className="bg-gradient-to-r from-cyan-50 to-rose-50">
             <div className="navbar mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -42,6 +42,7 @@ export default function Navbar({ user }) {
                         <label
                             tabIndex={0}
                             className="btn btn-ghost btn-circle"
+                            onClick={() => setOpen(true)}
                         >
                             <div className="indicator">
                                 <svg
@@ -64,24 +65,6 @@ export default function Navbar({ user }) {
                                 </span>
                             </div>
                         </label>
-                        <div
-                            tabIndex={0}
-                            className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
-                        >
-                            <div className="card-body">
-                                <span className="font-bold text-lg">
-                                    8 Items
-                                </span>
-                                <span className="text-info">
-                                    Subtotal: $999
-                                </span>
-                                <div className="card-actions">
-                                    <button className="btn btn-primary btn-block">
-                                        View cart
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <button className="btn btn-ghost btn-circle">
                         <div className="indicator">

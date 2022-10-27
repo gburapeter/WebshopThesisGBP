@@ -2,7 +2,9 @@ import Footer from "@/Layouts/Authenticated/components/Footer/Footer";
 import Navbar from "@/Layouts/Authenticated/components/Header/Navbar/Navbar";
 import Subbar from "@/Layouts/Authenticated/components/Header/Subbar/Subbar";
 import SidebarDrawer from "@/Layouts/Authenticated/components/SidebarDrawer/SidebarDrawer";
+import CartModal from "@/Pages/Checkout/components/CartModal";
 import { usePage } from "@inertiajs/inertia-react";
+import { useState } from "react";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -10,7 +12,7 @@ function classNames(...classes) {
 
 export default function AuthenticatedLayout({ header, children, title }) {
     const { auth } = usePage().props;
-
+    const [open, setOpen] = useState(false);
     return (
         <div>
             <div className="drawer ">
@@ -22,7 +24,11 @@ export default function AuthenticatedLayout({ header, children, title }) {
 
                 <div className="drawer-content">
                     <div className="min-h-full bg-gradient-to-r from-cyan-50 to-rose-50">
-                        <Navbar user={auth.user} />
+                        <Navbar
+                            user={auth.user}
+                            open={open}
+                            setOpen={setOpen}
+                        />
                         <Subbar user={auth.user} />
 
                         {/* <Header title={title} message={auth.user.name} /> */}
@@ -32,6 +38,7 @@ export default function AuthenticatedLayout({ header, children, title }) {
                             </div>
                         </main>
                         <Footer />
+                        <CartModal open={open} setOpen={setOpen} />
                     </div>
                 </div>
                 <div className="drawer-side">

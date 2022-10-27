@@ -33,7 +33,9 @@ Route::resource('categories', ProductCategoryController::class)
 
 Route::resource('products', ProductController::class);
 
-
+Route::get('/checkout', function () {
+    return Inertia::render('Checkout/Index');
+})->middleware(['auth', 'verified'])->name('checkout');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
