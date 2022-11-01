@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShipmentController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -32,6 +33,9 @@ Route::resource('categories', ProductCategoryController::class)
     ]);
 
 Route::resource('products', ProductController::class);
+
+Route::resource('shipments', ShipmentController::class);
+
 
 Route::get('/checkout', function () {
     return Inertia::render('Checkout/Index');

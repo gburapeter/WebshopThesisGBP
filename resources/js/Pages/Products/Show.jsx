@@ -2,7 +2,7 @@ import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
 import Features from "./components/Features";
-import Zoom from "react-reveal/Zoom";
+import { Zoom } from "react-awesome-reveal";
 const product = {
     name: "Basic Tee 6-Pack",
     price: "$192",
@@ -112,7 +112,7 @@ const Show = ({ myProduct }) => {
                 <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
                     <div className="aspect-w-3 aspect-h-4 hidden overflow-hidden rounded-lg lg:block">
                         <img
-                            src={product.images[0].src}
+                            src={myProduct.image_path + "/1.jpg"}
                             alt={product.images[0].alt}
                             className="h-full w-full object-cover object-center"
                         />
@@ -120,14 +120,14 @@ const Show = ({ myProduct }) => {
                     <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
                         <div className="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
                             <img
-                                src={product.images[1].src}
+                                src={myProduct.image_path + "/2.jpg"}
                                 alt={product.images[1].alt}
                                 className="h-full w-full object-cover object-center"
                             />
                         </div>
                         <div className="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
                             <img
-                                src={product.images[2].src}
+                                src={myProduct.image_path + "/3.jpg"}
                                 alt={product.images[2].alt}
                                 className="h-full w-full object-cover object-center"
                             />
@@ -135,7 +135,7 @@ const Show = ({ myProduct }) => {
                     </div>
                     <div className="aspect-w-4 aspect-h-5 sm:overflow-hidden sm:rounded-lg lg:aspect-w-3 lg:aspect-h-4">
                         <img
-                            src={product.images[3].src}
+                            src={myProduct.image_path + "/4.jpg"}
                             alt={product.images[3].alt}
                             className="h-full w-full object-cover object-center"
                         />

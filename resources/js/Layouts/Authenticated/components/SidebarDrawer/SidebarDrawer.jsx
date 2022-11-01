@@ -14,7 +14,7 @@ export default function SidebarDrawer() {
     const [selectedTab, setSelectedTab] = useTabs(categoriesArr);
     return (
         <>
-            <nav className="flex border-b justify-between border-gray-300 ">
+            <nav className="flex border-b justify-between border-gray-300  ">
                 {categories.map(
                     ({
                         id,

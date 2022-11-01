@@ -10,10 +10,10 @@
 
             "subcategories": [
                 {
-                    "category_name": "Macbook",
+                    "category_name": "Apple",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":"https://www.tailorbrands.com/wp-content/uploads/2021/01/apple_logo_1988.jpg"
+                    "image_path":"images/ProductCategories/Laptops/Apple.jpg"
 
 
                 },
@@ -21,7 +21,7 @@
                     "category_name": "Asus",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":"https://tech2.hu/wp-content/uploads/2016/05/ASUS-Logo-2.1.jpg"
+                    "image_path":"images/ProductCategories/Laptops/Asus.jpg"
 
 
                 },
@@ -29,7 +29,7 @@
                     "category_name": "Dell",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":"https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4f4e6017073009.5f9706137d230.jpg"
+                    "image_path":"images/ProductCategories/Laptops/Dell.jpg"
 
 
                 },
@@ -37,7 +37,7 @@
                     "category_name": "HP",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":"http://www.logotaglines.com/wp-content/uploads/2016/08/hp-logo.jpg"
+                    "image_path":"images/ProductCategories/Laptops/HP.jpg"
 
 
                 },
@@ -45,14 +45,14 @@
                     "category_name": "Lenovo",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":"https://www.pngall.com/wp-content/uploads/8/Lenovo-Logo-PNG-File.png"
+                    "image_path":"images/ProductCategories/Laptops/Lenovo.jpg"
 
                 },
                 {
                     "category_name": "Laptop accessories",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":"https://femina.wwmindia.com/content/2021/jan/laptop1611219655.jpg"
+                    "image_path":"images/ProductCategories/Laptops/Laptop.jpg"
 
                 }
 
@@ -66,24 +66,24 @@
 
             "subcategories": [
                 {
-                    "category_name": "Iphone",
+                    "category_name": "Apple",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":"https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/10/Black-Apple-logo-on-dark-gray-background.jpg"
+                    "image_path":"images/ProductCategories/MobilePhones/Apple.jpg"
 
                 },
                 {
                     "category_name": "Huawei",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":"https://www.designyourway.net/blog/wp-content/uploads/2019/10/huwaei-logo-700x504.jpg"
+                   "image_path":"images/ProductCategories/MobilePhones/Huawei.jpg"
 
                 },
                 {
                     "category_name": "Samsung",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":"https://logoeps.com/wp-content/uploads/2012/06/samsung-mobile-logo-vector-01.png"
+                    "image_path":"images/ProductCategories/MobilePhones/Samsung.jpg"
 
 
                 },
@@ -91,7 +91,7 @@
                     "category_name": "Xiaomi",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/640px-Xiaomi_logo_%282021-%29.svg.png"
+                   "image_path":"images/ProductCategories/MobilePhones/Xiaomi.jpg"
 
 
                 },
@@ -100,7 +100,7 @@
                     "category_name": "Nokia",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":"https://branditechture.agency/brand-logos/wp-content/uploads/wpdm-cache/Nokia-900x0.jpg"
+                    "image_path":"images/ProductCategories/MobilePhones/Nokia.jpg"
 
 
                 },
@@ -108,7 +108,7 @@
                     "category_name": "Mobile accessories",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":"https://thumbs.dreamstime.com/b/illustration-icon-set-mobile-accessories-phone-101752555.jpg"
+                    "image_path":"images/ProductCategories/MobilePhones/Mobile.jpg"
 
                 }
 

@@ -48,10 +48,19 @@ class ProductCategoryController extends Controller
      */
     public function show(ProductCategory $productCategory)
     {
+
         return Inertia::render('ProductCategories/Show', [
             'productCategory' => $productCategory,
-            // 'products' => $productCategory->products
-            'products' => Product::paginate(9)
+            'products' => $productCategory->products()->paginate(9)->through(function ($product) {
+                return [
+                    'id' => $product->id,
+                    'product_name' => $product->product_name,
+                    'product_price' => $product->product_price,
+                    'image_path' => $product->image_path,
+                ];
+            }),
+
+            //'products' => Product::paginate(9)
 
         ]);
     }

@@ -34,7 +34,7 @@ class ProductCategorySeeder extends Seeder
                             'category_name' => $subCategory->category_name,
                             'category_code' => $subCategory->category_code,
                             'category_description' => $subCategory->category_description,
-                            'image_path' => $subCategory->image_path,
+                            'image_path' => asset($subCategory->image_path),
                         ])
                     );
                 }

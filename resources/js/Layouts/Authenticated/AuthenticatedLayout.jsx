@@ -47,7 +47,7 @@ export default function AuthenticatedLayout({ header, children, title }) {
                         className="drawer-overlay"
                     ></label>
 
-                    <div className=" p-4 w-3/5 overflow-y-auto bg-gradient-to-r from-cyan-200 to-rose-100">
+                    <div className=" p-4 w-3/5 overflow-y-auto bg-gradient-to-r from-cyan-50 to-rose-50">
                         <div className="w-full">
                             <SidebarDrawer />
                         </div>
