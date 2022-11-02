@@ -67,7 +67,7 @@ class ProductCategoryController extends Controller
 
                     ];
                 }),
-            'acceptedFilters' => Request::all('order', 'sort'),
+            'acceptedFilters' => Request::all(['search', 'order', 'sort']),
             //'products' => Product::paginate(9)
 
         ]);

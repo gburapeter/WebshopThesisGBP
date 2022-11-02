@@ -7,14 +7,15 @@ import {
     Squares2X2Icon,
 } from "@heroicons/react/20/solid";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Inertia } from "@inertiajs/inertia";
 import ProductCard from "./ProductCard";
 import Pagination from "../../ProductCategories/components/Pagination";
-import { usePage } from "@inertiajs/inertia-react";
+import { useForm, usePage } from "@inertiajs/inertia-react";
 import InputLabel from "@/Components/Form/InputLabel";
 import InputError from "@/Components/Form/InputError";
-
+import { usePrevious } from "react-use";
+import pickBy from "lodash/pickBy";
 const sortOptions = [
     {
         name: "Price low to high",
@@ -100,25 +101,37 @@ const filters = [
     },
 ];
 
-export default function ProductsList({ productCategory, products }) {
-    const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-    const { filters2 } = usePage().props;
-    const [values, setValues] = useState({
-        // role: filters.role || "", // role is used only on users page
-        // search: filters.search || "",
-        // trashed: filters.trashed || "",
-        order: filters2?.order || "",
-        sort: filters2?.sort || "",
+export default function ProductsList({
+    productCategory,
+    products,
+    acceptedFilters,
+}) {
+    const [queries, setQueries] = useState({
+        order: acceptedFilters.order || "",
+        sort: acceptedFilters.sort || "",
+        search: acceptedFilters.search || "",
     });
-    const orderBy = (e) => {
-        Inertia.get(
-            route(route().current(), [productCategory]),
-            { order: e.order, sort: e.sort },
-            {
-                preserveState: true,
-                replace: true,
-            }
-        );
+
+    const [activeSort, setActiveSort] = useState(null);
+    const prevValues = usePrevious(queries);
+    useEffect(() => {
+        if (prevValues) {
+            Inertia.get(
+                route(route().current(), [productCategory]),
+                pickBy(queries),
+                {
+                    replace: true,
+                    preserveState: true,
+                }
+            );
+        }
+    }, [queries]);
+
+    const onHandleChange = (event) => {
+        setQueries((prevData) => ({
+            ...prevData,
+            [event.target.name]: event.target.value,
+        }));
     };
 
     return (
@@ -173,7 +186,12 @@ export default function ProductsList({ productCategory, products }) {
 
                                 <input
                                     type="text"
-                                    value=""
+                                    value={queries.search}
+                                    name="search"
+                                    // onChange={(e) =>
+                                    //     setData("search", e.target.value)
+                                    // }
+                                    onChange={onHandleChange}
                                     className={`mt-5 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm `}
                                 />
 
@@ -309,7 +327,8 @@ export default function ProductsList({ productCategory, products }) {
                                                                 <div className="py-1">
                                                                     {sortOptions.map(
                                                                         (
-                                                                            option
+                                                                            option,
+                                                                            index
                                                                         ) => (
                                                                             <Menu.Item
                                                                                 key={
@@ -318,17 +337,23 @@ export default function ProductsList({ productCategory, products }) {
                                                                             >
                                                                                 <a
                                                                                     onClick={() => {
-                                                                                        option.active = true;
-                                                                                        orderBy(
-                                                                                            {
+                                                                                        setActiveSort(
+                                                                                            index
+                                                                                        );
+                                                                                        setQueries(
+                                                                                            (
+                                                                                                prevData
+                                                                                            ) => ({
+                                                                                                ...prevData,
                                                                                                 order: option.order,
                                                                                                 sort: option.sort,
-                                                                                            }
+                                                                                            })
                                                                                         );
                                                                                     }}
                                                                                     className={`
                                                                                         ${
-                                                                                            option.active
+                                                                                            activeSort ==
+                                                                                            index
                                                                                                 ? "bg-indigo-50"
                                                                                                 : ""
                                                                                         }

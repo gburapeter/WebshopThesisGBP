@@ -14,7 +14,7 @@
         "autoprefixer": "^10.4.2",
         "axios": "^0.27",
         "laravel-vite-plugin": "^0.6.0",
-        "lodash": "^4.17.19",
+        "lodash": "^4.17.21",
         "postcss": "^8.4.6",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
@@ -30,6 +30,7 @@
         "react-awesome-reveal": "^4.1.0",
         "react-headless-tabs": "^6.0.2",
         "react-step-wizard": "^5.3.11",
+        "react-use": "^17.4.0",
         "swiper": "^8.4.2"
     }
 }
