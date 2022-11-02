@@ -6,7 +6,9 @@ use App\Http\Requests\StoreProductCategoryRequest;
 use App\Http\Requests\UpdateProductCategoryRequest;
 use App\Models\Product;
 use App\Models\ProductCategory;
+
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Request;
 
 class ProductCategoryController extends Controller
 {
@@ -50,16 +52,22 @@ class ProductCategoryController extends Controller
     {
 
         return Inertia::render('ProductCategories/Show', [
-            'productCategory' => $productCategory,
-            'products' => $productCategory->products()->paginate(9)->through(function ($product) {
-                return [
-                    'id' => $product->id,
-                    'product_name' => $product->product_name,
-                    'product_price' => $product->product_price,
-                    'image_path' => $product->image_path,
-                ];
-            }),
+            'productCategory' => $productCategory->id,
+            'products' => $productCategory->products()
+                ->ordering()
+                ->filter(Request::only('search'))
+                ->paginate(9)
+                ->withQueryString()
+                ->through(function ($product) {
+                    return [
+                        'id' => $product->id,
+                        'product_name' => $product->product_name,
+                        'product_price' => $product->product_price,
+                        'image_path' => $product->image_path,
 
+                    ];
+                }),
+            'acceptedFilters' => Request::all('order', 'sort'),
             //'products' => Product::paginate(9)
 
         ]);

@@ -5,7 +5,10 @@ import ProductsList from "../Products/components/ProductsList";
 const Show = ({ productCategory, products }) => {
     return (
         <div className="bg-white ">
-            <ProductsList products={products} />
+            <ProductsList
+                products={products}
+                productCategory={productCategory}
+            />
         </div>
     );
 };

@@ -8,17 +8,53 @@ import {
 } from "@heroicons/react/20/solid";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment, useState } from "react";
-
+import { Inertia } from "@inertiajs/inertia";
 import ProductCard from "./ProductCard";
 import Pagination from "../../ProductCategories/components/Pagination";
+import { usePage } from "@inertiajs/inertia-react";
+import InputLabel from "@/Components/Form/InputLabel";
+import InputError from "@/Components/Form/InputError";
 
 const sortOptions = [
-    { name: "Most Popular", href: "#", current: true },
-    { name: "Best Rating", href: "#", current: false },
-    { name: "Newest", href: "#", current: false },
-    { name: "Price: Low to High", href: "#", current: false },
-    { name: "Price: High to Low", href: "#", current: false },
+    {
+        name: "Price low to high",
+        order: "product_price",
+        sort: "asc",
+        active: false,
+    },
+    {
+        name: "Price high to low",
+        order: "product_price",
+        sort: "desc",
+        active: false,
+    },
+    {
+        name: "Newest",
+        order: "created_at",
+        sort: "desc",
+        active: false,
+    },
+    {
+        name: "Oldest",
+        order: "created_at",
+        sort: "asc",
+        active: false,
+    },
+    {
+        name: "Discount size",
+        order: "",
+        sort: "",
+        active: false,
+    },
+    ,
+    {
+        name: "Best rating",
+        order: "",
+        sort: "",
+        current: false,
+    },
 ];
+
 const subCategories = [
     { name: "Totes", href: "#" },
     { name: "Backpacks", href: "#" },
@@ -64,12 +100,26 @@ const filters = [
     },
 ];
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
-}
-
-export default function ProductsList({ mainCategoryName, products }) {
+export default function ProductsList({ productCategory, products }) {
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+    const { filters2 } = usePage().props;
+    const [values, setValues] = useState({
+        // role: filters.role || "", // role is used only on users page
+        // search: filters.search || "",
+        // trashed: filters.trashed || "",
+        order: filters2?.order || "",
+        sort: filters2?.sort || "",
+    });
+    const orderBy = (e) => {
+        Inertia.get(
+            route(route().current(), [productCategory]),
+            { order: e.order, sort: e.sort },
+            {
+                preserveState: true,
+                replace: true,
+            }
+        );
+    };
 
     return (
         <div className="bg-white">
@@ -116,10 +166,22 @@ export default function ProductsList({ mainCategoryName, products }) {
                         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                             {/* Filters */}
                             <form className="hidden lg:block">
+                                <InputLabel
+                                    forInput="search"
+                                    value="Search product"
+                                />
+
+                                <input
+                                    type="text"
+                                    value=""
+                                    className={`mt-5 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm `}
+                                />
+
+                                <InputError message="" className="mt-10" />
                                 <h3 className="sr-only">Categories</h3>
                                 <ul
                                     role="list"
-                                    className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900"
+                                    className="space-y-4 border-b pt-10 border-gray-200 pb-6 text-sm font-medium text-gray-900"
                                 >
                                     {subCategories.map((category) => (
                                         <li key={category.name}>
@@ -254,28 +316,29 @@ export default function ProductsList({ mainCategoryName, products }) {
                                                                                     option.name
                                                                                 }
                                                                             >
-                                                                                {({
-                                                                                    active,
-                                                                                }) => (
-                                                                                    <a
-                                                                                        href={
-                                                                                            option.href
+                                                                                <a
+                                                                                    onClick={() => {
+                                                                                        option.active = true;
+                                                                                        orderBy(
+                                                                                            {
+                                                                                                order: option.order,
+                                                                                                sort: option.sort,
+                                                                                            }
+                                                                                        );
+                                                                                    }}
+                                                                                    className={`
+                                                                                        ${
+                                                                                            option.active
+                                                                                                ? "bg-indigo-50"
+                                                                                                : ""
                                                                                         }
-                                                                                        className={classNames(
-                                                                                            option.current
-                                                                                                ? "font-medium text-gray-900"
-                                                                                                : "text-gray-500",
-                                                                                            active
-                                                                                                ? "bg-gray-100"
-                                                                                                : "",
-                                                                                            "block px-4 py-2 text-sm"
-                                                                                        )}
-                                                                                    >
-                                                                                        {
-                                                                                            option.name
-                                                                                        }
-                                                                                    </a>
-                                                                                )}
+                                                                                        block px-4 py-2 text-sm hover:bg-indigo-200 cursor-pointer
+                                                                                        `}
+                                                                                >
+                                                                                    {
+                                                                                        option.name
+                                                                                    }
+                                                                                </a>
                                                                             </Menu.Item>
                                                                         )
                                                                     )}
