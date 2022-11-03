@@ -1,6 +1,6 @@
 import React from "react";
 import { CheckoutProduct } from "./components/CheckoutProduct";
-import Wizard from "./components/Wizard";
+import Wizard from "./components/Wizard/Wizard";
 
 const Index = () => {
     return (

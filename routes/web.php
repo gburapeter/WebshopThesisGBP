@@ -32,9 +32,9 @@ Route::resource('categories', ProductCategoryController::class)
         'categories' => 'product_category'
     ]);
 
-Route::resource('products', ProductController::class);
+Route::resource('products', ProductController::class)->middleware(['auth', 'verified']);
 
-Route::resource('shipments', ShipmentController::class);
+Route::resource('shipments', ShipmentController::class)->middleware(['auth', 'verified']);
 
 
 Route::get('/checkout', function () {

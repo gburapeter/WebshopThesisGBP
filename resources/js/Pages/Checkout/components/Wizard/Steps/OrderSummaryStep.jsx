@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckoutProduct } from "../CheckoutProduct";
+import { CheckoutProduct } from "../../CheckoutProduct";
 import StepLayout from "./StepLayout";
 import StepsFooter from "./StepsFooter";
 

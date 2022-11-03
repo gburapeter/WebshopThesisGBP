@@ -49,4 +49,33 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Address::class);
     }
+
+    public function cart()
+    {
+        return $this->hasOne(Cart::class);
+    }
+
+    /**
+     * Get all of the cart items for the user.
+     */
+    public function cartItems()
+    {
+        return $this->hasManyThrough(CartItem::class, Cart::class);
+    }
+
+
+
+
+
+
+
+    /**
+     * HasManyDeep
+     */
+    use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
+
+    public function cartProducts()
+    {
+        return $this->hasManyDeepFromRelations($this->cartItems(), (new CartItem())->product());
+    }
 }

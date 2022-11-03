@@ -2,7 +2,7 @@ import Footer from "@/Layouts/Authenticated/components/Footer/Footer";
 import Navbar from "@/Layouts/Authenticated/components/Header/Navbar/Navbar";
 import Subbar from "@/Layouts/Authenticated/components/Header/Subbar/Subbar";
 import SidebarDrawer from "@/Layouts/Authenticated/components/SidebarDrawer/SidebarDrawer";
-import CartModal from "@/Pages/Checkout/components/CartModal";
+import CartModal from "@/Pages/Cart/CartModal";
 import { usePage } from "@inertiajs/inertia-react";
 import { useState } from "react";
 

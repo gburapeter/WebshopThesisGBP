@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { usePage } from "@inertiajs/inertia-react";
 
 const products = [
     {
@@ -31,6 +32,8 @@ const products = [
 ];
 
 export default function CartModal({ open, setOpen }) {
+    const { cartProducts } = usePage().props;
+    console.log(cartProducts);
     return (
         <Transition.Root show={open} as={Fragment}>
             <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -90,7 +93,7 @@ export default function CartModal({ open, setOpen }) {
                                                         role="list"
                                                         className="-my-6 divide-y divide-gray-200"
                                                     >
-                                                        {products.map(
+                                                        {cartProducts.map(
                                                             (product) => (
                                                                 <li
                                                                     key={
@@ -101,11 +104,10 @@ export default function CartModal({ open, setOpen }) {
                                                                     <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                                                         <img
                                                                             src={
-                                                                                product.imageSrc
+                                                                                product.image_path +
+                                                                                "/Main.jpg"
                                                                             }
-                                                                            alt={
-                                                                                product.imageAlt
-                                                                            }
+                                                                            alt="alt"
                                                                             className="h-full w-full object-cover object-center"
                                                                         />
                                                                     </div>
@@ -115,30 +117,34 @@ export default function CartModal({ open, setOpen }) {
                                                                             <div className="flex justify-between text-base font-medium text-gray-900">
                                                                                 <h3>
                                                                                     <a
-                                                                                        href={
-                                                                                            product.href
-                                                                                        }
+                                                                                        href={route(
+                                                                                            "products.show",
+                                                                                            [
+                                                                                                product,
+                                                                                            ]
+                                                                                        )}
+                                                                                        className="hover:text-indigo-300"
                                                                                     >
                                                                                         {
-                                                                                            product.name
+                                                                                            product.product_name
                                                                                         }
                                                                                     </a>
                                                                                 </h3>
                                                                                 <p className="ml-4">
                                                                                     {
-                                                                                        product.price
+                                                                                        product.product_price
                                                                                     }
                                                                                 </p>
                                                                             </div>
-                                                                            <p className="mt-1 text-sm text-gray-500">
+                                                                            {/* <p className="mt-1 text-sm text-gray-500">
                                                                                 {
                                                                                     product.color
                                                                                 }
-                                                                            </p>
+                                                                            </p> */}
                                                                         </div>
                                                                         <div className="flex flex-1 items-end justify-between text-sm">
                                                                             <p className="text-gray-500">
-                                                                                Qty{" "}
+                                                                                Quantity:{" "}
                                                                                 {
                                                                                     product.quantity
                                                                                 }

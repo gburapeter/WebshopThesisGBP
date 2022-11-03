@@ -2,21 +2,14 @@ import InputError from "@/Components/Form/InputError";
 import InputLabel from "@/Components/Form/InputLabel";
 import { useForm } from "@inertiajs/inertia-react";
 import React from "react";
-import { CheckoutProduct } from "../CheckoutProduct";
+import { CheckoutProduct } from "../../CheckoutProduct";
 import StepLayout from "./StepLayout";
 import StepsFooter from "./StepsFooter";
 
-const DeliveryInfoStep = (props) => {
+const BillingInfoStep = (props) => {
     const update = (e) => {
         console.log(props.currentStep);
         props.update(e.target.name, e.target.value);
-    };
-
-    const validate = () => {
-        if (confirm("Are you sure you want to go back?")) {
-            // eslint-disable-line
-            props.previousStep();
-        }
     };
 
     const submit = (e) => {
@@ -243,4 +236,4 @@ const DeliveryInfoStep = (props) => {
     );
 };
 
-export default DeliveryInfoStep;
+export default BillingInfoStep;

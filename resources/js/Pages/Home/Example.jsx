@@ -3,7 +3,7 @@ import { Statistics } from "@/Pages/Home/components/Statistics";
 import { MobilePhones } from "./components/MobilePhones";
 import MySwiper from "./components/MySwiper";
 
-import CartModal from "../Checkout/components/CartModal";
+import CartModal from "../Cart/CartModal";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");

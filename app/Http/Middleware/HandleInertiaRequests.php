@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
 
@@ -49,6 +50,19 @@ class HandleInertiaRequests extends Middleware
 
                 ];
             }),
+
+
+            'cartProducts' => Auth::user() ? Auth::user()->cartProducts->map(function ($product) {
+                return [
+                    'id' => $product->id,
+                    'product_name' => $product->product_name,
+                    'product_price' => $product->product_price,
+                    'image_path' => $product->image_path,
+                    'quantity' => Auth::user()->cartItems()->where('product_id', '=', $product->id)->first()->quantity,
+
+
+                ];
+            }) : null,
 
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [
