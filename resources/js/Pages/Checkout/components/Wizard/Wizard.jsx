@@ -12,7 +12,7 @@ const Wizard = ({ address }) => {
     const { auth } = usePage().props;
     const formData = { ...pickBy(address), ...pickBy(auth.user.data) };
     const { data, setData, post, errors } = useForm(formData);
-
+    console.log(data);
     return (
         <div>
             <StepWizard isHashEnabled nav={<StepNavigation />}>
