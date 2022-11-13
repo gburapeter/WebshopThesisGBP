@@ -2,31 +2,29 @@
  * Stats Component - to illustrate the possible functions
  * Could be used for nav buttons or overview
  */
-const StepsFooter = ({ nextStep, previousStep, totalSteps, step }) => (
+const StepsFooter = ({
+    goToStep,
+    nextStep,
+    previousStep,
+    totalSteps,
+    step,
+}) => (
     <div>
         {step > 1 && (
             <button
                 onClick={previousStep}
-                className={`w-20 text-center ml-4 bg-error btn-sm  `}
+                className={`w-20 text-center text-black font-bold ml-4 bg-red-300 hover:bg-red-500 btn-sm  `}
             >
                 Previous
             </button>
         )}
-        {step < totalSteps ? (
-            <button
-                onClick={nextStep}
-                className={`w-20 text-center ml-4  bg-primary btn-sm  `}
-            >
-                Next
-            </button>
-        ) : (
-            <button
-                onClick={nextStep}
-                className={`w-20 text-center ml-4  bg-primary btn-sm  `}
-            >
-                Submit
-            </button>
-        )}
+
+        <button
+            onClick={nextStep}
+            className={`w-20 text-center text-black font-bold ml-4 bg-indigo-300 hover:bg-indigo-500 btn-sm  `}
+        >
+            {step < totalSteps ? "Next" : "Submit"}
+        </button>
     </div>
 );
 

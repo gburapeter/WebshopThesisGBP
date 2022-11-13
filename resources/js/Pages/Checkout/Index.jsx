@@ -1,12 +1,15 @@
-import React from "react";
-
+import { createContext } from "react";
 import Wizard from "./components/Wizard/Wizard";
 
-const Index = () => {
+// export const AddressContext = createContext();
+
+const Index = ({ address }) => {
     return (
         <div>
-            <section class="bg-white text-gray-600 body-font">
-                <Wizard />
+            <section className="bg-white text-gray-600 ">
+                {/* <AddressContext.Provider value={address}> */}
+                <Wizard address={address} />
+                {/* </AddressContext.Provider> */}
             </section>
         </div>
     );

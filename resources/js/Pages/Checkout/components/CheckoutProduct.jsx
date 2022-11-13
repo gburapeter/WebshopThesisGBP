@@ -16,15 +16,15 @@ const CheckoutProduct = ({ item }) => {
                     />
                 </div>
                 <a href={route("products.show", [item.product])}>
-                    <h2 className="text-lg text-gray-900 hover:text-indigo-300 font-medium title-font mb-2">
+                    <h2 className="text-lg text-gray-900 hover:text-indigo-500 font-medium title-font mb-2">
                         {item.product.product_name}
                         {/* {product.product.product_name} */}
                     </h2>
                 </a>
-                <p className="leading-relaxed font-bold text-indigo-300">
+                <p className="leading-relaxed font-bold ">
                     {item.quantity} pcs
                 </p>
-                <p className="leading-relaxed text-base">
+                <p className="leading-relaxed text-indigo-500 font-bold">
                     {item.product.product_price}$
                 </p>
 

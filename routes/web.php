@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CartItemController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShipmentController;
@@ -28,7 +29,9 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-})->middleware(['auth', 'verified'])->name('home');
+})
+    // ->middleware(['auth', 'verified'])
+    ->name('home');
 
 Route::resource('categories', ProductCategoryController::class)
     ->parameters([
@@ -46,9 +49,13 @@ Route::resource('carts', CartController::class)->middleware(['auth', 'verified']
 Route::resource('shipments', ShipmentController::class)->middleware(['auth', 'verified']);
 
 
-Route::get('/checkout', function () {
-    return Inertia::render('Checkout/Index');
-})->middleware(['auth', 'verified'])->name('checkout');
+// Route::get('/checkout', function () {
+//     return Inertia::render('Checkout/Index');
+// })->middleware(['auth', 'verified'])->name('checkout');
+
+
+Route::get('checkout', [CheckoutController::class, 'index'])
+    ->name('checkout');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

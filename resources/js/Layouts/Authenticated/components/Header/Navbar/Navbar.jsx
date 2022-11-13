@@ -1,10 +1,13 @@
 import Dropdown from "@/Components/Navigation/Dropdown";
+import { usePage } from "@inertiajs/inertia-react";
 import React from "react";
 import SearchBar from "./components/SearchBar";
 
 export default function Navbar({ user, open, setOpen }) {
+    const { cartItemNr } = usePage().props;
+
     return (
-        <div className="bg-gradient-to-r from-cyan-50 to-rose-50">
+        <div className="bg-gradient-to-r from-rose-50 to-cyan-50">
             <div className="navbar mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="navbar-start ">
                     <a
@@ -60,8 +63,8 @@ export default function Navbar({ user, open, setOpen }) {
                                     />
                                 </svg>
 
-                                <span className="badge badge-sm indicator-item">
-                                    8
+                                <span className="badge badge-sm indicator-item bg-indigo-500">
+                                    {cartItemNr}
                                 </span>
                             </div>
                         </label>
@@ -83,7 +86,7 @@ export default function Navbar({ user, open, setOpen }) {
                                 />
                             </svg>
 
-                            <span className="badge badge-xs badge-primary indicator-item"></span>
+                            <span className="badge badge-xs badge-primary indicator-item bg-indigo-500"></span>
                         </div>
                     </button>
 

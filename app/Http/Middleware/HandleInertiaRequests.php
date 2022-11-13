@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Resources\UserResource;
 use App\Models\Cart;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
@@ -40,7 +41,8 @@ class HandleInertiaRequests extends Middleware
 
         return array_merge(parent::share($request), [
             'auth' => [
-                'user' => $request->user(),
+                'user' => Auth::user() ? new UserResource(Auth::user()) : null,
+
             ],
 
             'categories' => ProductCategory::with('categories')->where('product_category_id', '=', null)->get()->map(function ($category) {
@@ -53,19 +55,7 @@ class HandleInertiaRequests extends Middleware
                 ];
             }),
 
-
-            // 'cartProducts' => Auth::user() ? Auth::user()->cartProducts->map(function ($product) {
-            //     return [
-            //         'id' => $product->id,
-            //         'product_name' => $product->product_name,
-            //         'product_price' => $product->product_price,
-            //         'image_path' => $product->image_path,
-            //         'quantity' => Auth::user()->cartItems()->where('product_id', '=', $product->id)->first()->quantity,
-            //         'available_quantity' => $product->stock->available_quantity,
-
-            //     ];
-            // }) : null,
-
+            'cartItemNr' => Auth::user() ? Auth::user()->cart()->withCount('cartItems')->first()->cart_items_count : null,
             'cartTotal' => Auth::user() ? Auth::user()->cart->totalCalculation() : null,
             'cartProducts' => Auth::user() ? Auth::user()->cartItems->map(function ($product) {
                 return [
@@ -73,12 +63,6 @@ class HandleInertiaRequests extends Middleware
                     'quantity' => $product->quantity,
                     'product' => $product->product,
                     'available_quantity' => $product->product->stock->available_quantity,
-
-                    // 'product_name' => $product->product_name,
-                    // 'product_price' => $product->product_price,
-                    // 'image_path' => $product->image_path,
-                    // 'quantity' => Auth::user()->cartItems()->where('product_id', '=', $product->id)->first()->quantity,
-                    // 'available_quantity' => $product->stock->available_quantity,
 
                 ];
             }) : null,

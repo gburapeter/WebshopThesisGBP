@@ -23,7 +23,7 @@ export default function AuthenticatedLayout({ header, children, title }) {
                 />
 
                 <div className="drawer-content">
-                    <div className="min-h-full bg-gradient-to-r from-cyan-50 to-rose-50">
+                    <div className="min-h-full bg-gradient-to-r from-rose-50 to-cyan-50">
                         <Navbar
                             user={auth.user}
                             open={open}

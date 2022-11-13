@@ -1,49 +1,37 @@
-import { useState } from "react";
+import { useForm, usePage } from "@inertiajs/inertia-react";
 import StepWizard from "react-step-wizard";
 import StepNavigation from "./StepNavigation";
 import BillingInfoStep from "./Steps/BillingInfoStep";
 import DeliveryInfoStep from "./Steps/DeliveryInfoStep";
 import OrderSummaryStep from "./Steps/OrderSummaryStep";
 import ProductCheckStep from "./Steps/ProductCheckStep";
+import pickBy from "lodash/pickBy";
 /* eslint react/prop-types: 0 */
 
-/**
- * A basic demonstration of how to use the step wizard
- */
-const Wizard = () => {
-    const [state, updateState] = useState({
-        form: {},
-    });
-
-    const updateForm = (key, value) => {
-        const { form } = state;
-
-        form[key] = value;
-        updateState({
-            ...state,
-            form,
-        });
-    };
-
-    // Do something on step change
-    const onStepChange = (stats) => {
-        console.log(state.form);
-    };
+const Wizard = ({ address }) => {
+    const { auth } = usePage().props;
+    const formData = { ...pickBy(address), ...pickBy(auth.user.data) };
+    const { data, setData, post, errors } = useForm(formData);
 
     return (
         <div>
-            <StepWizard
-                onStepChange={onStepChange}
-                isHashEnabled
-                nav={<StepNavigation />}
-            >
-                <ProductCheckStep
-                    hashKey={"ProductReview"}
-                    update={updateForm}
+            <StepWizard isHashEnabled nav={<StepNavigation />}>
+                <ProductCheckStep hashKey={"ProductReview"} />
+                <DeliveryInfoStep
+                    hashKey={"DeliveryInfo"}
+                    data={data}
+                    setData={setData}
+                    errors={errors}
+                    post={post}
                 />
-                <DeliveryInfoStep hashKey={"DeliveryInfo"} form={state.form} />
-                <BillingInfoStep hashKey={"BillingInfo"} form={state.form} />
-                <OrderSummaryStep hashKey={"OrderSummary!"} />
+                <BillingInfoStep
+                    hashKey={"BillingInfo"}
+                    data={data}
+                    setData={setData}
+                    errors={errors}
+                    post={post}
+                />
+                <OrderSummaryStep hashKey={"OrderSummary!"} data={data} />
             </StepWizard>
         </div>
     );

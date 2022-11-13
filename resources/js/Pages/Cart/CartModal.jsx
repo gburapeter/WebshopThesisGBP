@@ -93,7 +93,7 @@ export default function CartModal({ open, setOpen }) {
                                                         role="list"
                                                         className="-my-6 divide-y divide-gray-200"
                                                     >
-                                                        {cartProducts.map(
+                                                        {cartProducts?.map(
                                                             (item) => (
                                                                 <li
                                                                     key={
