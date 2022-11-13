@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCartItemRequest;
 use App\Http\Requests\UpdateCartItemRequest;
 use App\Models\CartItem;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
 
 class CartItemController extends Controller
 {
@@ -36,7 +39,28 @@ class CartItemController extends Controller
      */
     public function store(StoreCartItemRequest $request)
     {
-        //
+
+        Request::validate([
+            'id' => ['required', 'integer'],
+
+        ]);
+
+        $cartItem = CartItem::firstOrNew(
+            ['product_id' => $request->id],
+            [
+                'cart_id' => Auth::user()->cart->id,
+
+            ]
+        );
+        $cartItem->quantity += 1;
+        $cartItem->save();
+
+        // CartItem::create([
+        //     'product_id' => $request->id,
+        //     'cart_id' => Auth::user()->cart->id,
+        //     'quantity' => 1,
+
+        // ]);
     }
 
     /**
@@ -45,9 +69,9 @@ class CartItemController extends Controller
      * @param  \App\Models\CartItem  $cartItem
      * @return \Illuminate\Http\Response
      */
-    public function show(CartItem $cartItem)
+    public function show(CartItem $cartitem)
     {
-        //
+        dd($cartitem->id);
     }
 
     /**
@@ -56,7 +80,7 @@ class CartItemController extends Controller
      * @param  \App\Models\CartItem  $cartItem
      * @return \Illuminate\Http\Response
      */
-    public function edit(CartItem $cartItem)
+    public function edit(CartItem $cartitem)
     {
         //
     }
@@ -68,9 +92,18 @@ class CartItemController extends Controller
      * @param  \App\Models\CartItem  $cartItem
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCartItemRequest $request, CartItem $cartItem)
+    public function update(UpdateCartItemRequest $request, CartItem $cartitem)
     {
-        //
+
+
+        $cartitem->update(
+            Request::validate([
+                'quantity' => ['required'],
+
+            ])
+        );
+
+        return Redirect::back();
     }
 
     /**
@@ -79,8 +112,10 @@ class CartItemController extends Controller
      * @param  \App\Models\CartItem  $cartItem
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CartItem $cartItem)
+    public function destroy(CartItem $cartitem)
     {
-        //
+
+        $cartitem->delete();
+        return Redirect::back();
     }
 }

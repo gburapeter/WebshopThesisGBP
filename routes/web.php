@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShipmentController;
+
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -33,6 +36,12 @@ Route::resource('categories', ProductCategoryController::class)
     ]);
 
 Route::resource('products', ProductController::class)->middleware(['auth', 'verified']);
+
+Route::resource('cartitems', CartItemController::class)->middleware(['auth', 'verified']);
+
+Route::resource('carts', CartController::class)->middleware(['auth', 'verified']);
+
+
 
 Route::resource('shipments', ShipmentController::class)->middleware(['auth', 'verified']);
 

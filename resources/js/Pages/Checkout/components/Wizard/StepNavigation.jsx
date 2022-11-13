@@ -86,7 +86,7 @@ const StepNavigation = (props) => {
             onClick={() => props.goToStep(index + 1)}
             className={`sm:px-6 py-3 w-1/2 sm:w-auto ${
                 props.currentStep == index + 1
-                    ? "bg-blue-200 border-indigo-500"
+                    ? "bg-indigo-100 border-indigo-500"
                     : ""
             } justify-center cursor-pointer sm:justify-start border-b-2  title-font font-medium bg-gray-100 inline-flex items-center leading-none  text-indigo-500 tracking-wider rounded-t `}
         >
@@ -108,7 +108,9 @@ const StepNavigation = (props) => {
     //     );
     // }
 
-    return <div class="flex mx-auto place-content-center  ">{stepOutput}</div>;
+    return (
+        <div className="flex mx-auto place-content-center  ">{stepOutput}</div>
+    );
 };
 
 export default StepNavigation;

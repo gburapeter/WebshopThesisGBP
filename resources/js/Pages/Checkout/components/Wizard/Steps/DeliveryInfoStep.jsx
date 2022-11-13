@@ -2,16 +2,11 @@ import InputError from "@/Components/Form/InputError";
 import InputLabel from "@/Components/Form/InputLabel";
 import { useForm } from "@inertiajs/inertia-react";
 import React from "react";
-import { CheckoutProduct } from "../../CheckoutProduct";
+
 import StepLayout from "./StepLayout";
 import StepsFooter from "./StepsFooter";
 
 const DeliveryInfoStep = (props) => {
-    const update = (e) => {
-        console.log(props.currentStep);
-        props.update(e.target.name, e.target.value);
-    };
-
     const validate = () => {
         if (confirm("Are you sure you want to go back?")) {
             // eslint-disable-line
@@ -30,14 +25,14 @@ const DeliveryInfoStep = (props) => {
     return (
         <StepLayout>
             <form onSubmit={submit} method="POST">
-                <div class="flex flex-col text-center w-full">
-                    <h1 class="text-xl font-medium title-font mb-4 text-gray-900">
+                <div className="flex flex-col text-center w-full">
+                    <h1 className="text-xl font-medium title-font mb-4 text-gray-900">
                         Please enter your delivery information
                     </h1>
                 </div>
 
-                <div class="grid overflow-hidden grid-cols-6  grid-rows-1 gap-5 pt-10 ">
-                    <div class="box col-span-3">
+                <div className="grid overflow-hidden grid-cols-6  grid-rows-1 gap-5 pt-10 ">
+                    <div className="box col-span-3">
                         {" "}
                         <label
                             htmlFor="first-name"
@@ -58,7 +53,7 @@ const DeliveryInfoStep = (props) => {
                             className="mt-2"
                         />
                     </div>
-                    <div class="box col-span-3">
+                    <div className="box col-span-3">
                         <label
                             htmlFor="last-name"
                             className="block text-sm font-medium text-gray-700"
@@ -78,7 +73,7 @@ const DeliveryInfoStep = (props) => {
                             className="mt-2"
                         />
                     </div>
-                    <div class="box col-span-3">
+                    <div className="box col-span-3">
                         {" "}
                         <InputLabel forInput="email" value="Email" />
                         <input
@@ -89,7 +84,7 @@ const DeliveryInfoStep = (props) => {
                         />
                         <InputError message={errors.email} className="mt-2" />
                     </div>
-                    <div class="box col-span-3">
+                    <div className="box col-span-3">
                         <InputLabel forInput="phone" value="Phone" />
 
                         <input
@@ -101,7 +96,7 @@ const DeliveryInfoStep = (props) => {
 
                         <InputError message={errors.phone} className="mt-2" />
                     </div>
-                    <div class="box col-span-6 text-center ">
+                    <div className="box col-span-6 text-center ">
                         {" "}
                         <label
                             htmlFor="country"
@@ -125,7 +120,7 @@ const DeliveryInfoStep = (props) => {
                         <InputError message={errors.country} className="mt-2" />
                     </div>
 
-                    <div class="box col-span-3">
+                    <div className="box col-span-3">
                         {" "}
                         <label
                             htmlFor="city"
@@ -142,7 +137,7 @@ const DeliveryInfoStep = (props) => {
                         <InputError message={errors.city} className="mt-2" />
                     </div>
 
-                    <div class="box col-span-3">
+                    <div className="box col-span-3">
                         <label
                             htmlFor="region"
                             className="block text-sm font-medium text-gray-700"
@@ -158,7 +153,7 @@ const DeliveryInfoStep = (props) => {
                         <InputError message={errors.state} className="mt-2" />
                     </div>
 
-                    <div class="box col-span-3">
+                    <div className="box col-span-3">
                         <label
                             htmlFor="street-address"
                             className="block text-sm font-medium text-gray-700"
@@ -179,7 +174,7 @@ const DeliveryInfoStep = (props) => {
                         />
                     </div>
 
-                    <div class="box col-span-3">
+                    <div className="box col-span-3">
                         {" "}
                         <label
                             htmlFor="street-address"
@@ -201,7 +196,7 @@ const DeliveryInfoStep = (props) => {
                         />
                     </div>
 
-                    <div class="box col-span-3">
+                    <div className="box col-span-3">
                         {" "}
                         <label
                             htmlFor="street-address"
@@ -217,7 +212,7 @@ const DeliveryInfoStep = (props) => {
                         />
                         <InputError message={errors.suite} className="mt-2" />
                     </div>
-                    <div class="box col-span-3">
+                    <div className="box col-span-3">
                         <label
                             htmlFor="postal-code"
                             className="block text-sm font-medium text-gray-700"
@@ -235,7 +230,7 @@ const DeliveryInfoStep = (props) => {
                     </div>
                 </div>
 
-                <div class="flex flex-col text-right w-full pt-20">
+                <div className="flex flex-col text-right w-full pt-20">
                     <StepsFooter step={2} {...props} nextStep={submit} />
                 </div>
             </form>

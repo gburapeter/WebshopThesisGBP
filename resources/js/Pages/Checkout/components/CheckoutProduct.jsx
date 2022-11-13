@@ -1,22 +1,37 @@
 import React from "react";
-
-export const CheckoutProduct = () => {
+import { Inertia } from "@inertiajs/inertia";
+const CheckoutProduct = ({ item }) => {
+    const handleRemoval = (event, cartitem) => {
+        event.preventDefault();
+        Inertia.delete(route("cartitems.destroy", [cartitem.id]));
+    };
     return (
-        <div class="xl:w-1/3 md:w-1/2 p-4">
-            <div class="border border-gray-200 indicator hover:border-indigo-300 w-full flex flex-col items-center p-6 rounded-lg">
-                <div class="w-20 h-20 rounded-full bg-indigo-100 text-indigo-500 mb-2">
+        <div className="xl:w-1/3 md:w-1/2 p-4">
+            <div className="border border-gray-200 indicator hover:border-indigo-300 w-full flex flex-col items-center p-6 rounded-lg">
+                <div className="w-24 h-20 rounded-full bg-indigo-100 text-indigo-500 mb-2">
                     <img
-                        src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
-                        alt="asd"
-                        className=" "
+                        src={item.product.image_path + "/Main.jpg"}
+                        alt={item.product.product_name}
+                        className="mb-4"
                     />
                 </div>
+                <a href={route("products.show", [item.product])}>
+                    <h2 className="text-lg text-gray-900 hover:text-indigo-300 font-medium title-font mb-2">
+                        {item.product.product_name}
+                        {/* {product.product.product_name} */}
+                    </h2>
+                </a>
+                <p className="leading-relaxed font-bold text-indigo-300">
+                    {item.quantity} pcs
+                </p>
+                <p className="leading-relaxed text-base">
+                    {item.product.product_price}$
+                </p>
 
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
-                    Shooting Stars
-                </h2>
-                <p class="leading-relaxed text-base">999$</p>
-                <span className="indicator-item cursor-pointer hover:text-blue-300">
+                <span
+                    className="indicator-item cursor-pointer hover:text-blue-300"
+                    onClick={(e) => handleRemoval(e, item)}
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -36,3 +51,5 @@ export const CheckoutProduct = () => {
         </div>
     );
 };
+
+export default CheckoutProduct;

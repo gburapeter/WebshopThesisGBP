@@ -1,6 +1,17 @@
+import { Square2StackIcon } from "@heroicons/react/20/solid";
+import { useForm } from "@inertiajs/inertia-react";
 import React from "react";
 
 const ProductCard = ({ product }) => {
+    const { data, setData, post, processing, errors } = useForm({
+        id: product.id,
+    });
+
+    const submit = (e) => {
+        e.preventDefault();
+
+        post(route("cartitems.store"));
+    };
     return (
         <div className="border hover:border-indigo-300 bg-white">
             <a
@@ -50,10 +61,9 @@ const ProductCard = ({ product }) => {
                     ${product.product_price}
                 </p>
 
-                <button
-                    type="button"
-                    onClick={() => alert("asd")}
-                    className="mt-4 flex w-full items-center justify-center rounded-sm bg-gradient-to-r from-sky-100 to-green-200
+                <a
+                    onClick={submit}
+                    className="mt-4 cursor-pointer flex w-full items-center justify-center rounded-sm bg-gradient-to-r from-sky-100 to-green-200
                     hover:bg-gradient-to-r hover:from-sky-100 hover:to-green-400 px-8 py-4"
                 >
                     <span className="text-sm font-medium"> Add to Cart </span>
@@ -72,7 +82,7 @@ const ProductCard = ({ product }) => {
                             d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                         />
                     </svg>
-                </button>
+                </a>
             </div>
         </div>
     );

@@ -21,13 +21,17 @@ class ProductSeeder extends Seeder
 
         foreach ($productData->products as $product) {
 
-            Product::create([
+            $createdProduct = Product::create([
                 'product_name' => $product->product_name,
                 'product_price' => $product->product_price,
                 'sku' => $product->sku,
                 'description' => $product->description,
                 'image_path' => asset($product->image_path),
                 'product_category_id' => $product->product_category_id
+            ]);
+
+            $createdProduct->stock()->create([
+                'available_quantity' => 100
             ]);
         }
     }
