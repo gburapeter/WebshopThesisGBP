@@ -35,8 +35,9 @@ const OrderSummaryStep = (props) => {
                                         <div class="flow-root h-60 overflow-y-auto ">
                                             <ul class="-my-4 divide-y divide-gray-200 ">
                                                 {cartProducts?.map(
-                                                    (orderitem) => (
+                                                    (orderitem, index) => (
                                                         <OrderProduct
+                                                            key={index}
                                                             orderitem={
                                                                 orderitem
                                                             }

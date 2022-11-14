@@ -9,6 +9,12 @@ import StepsFooter from "./StepsFooter";
 const ProductCheckStep = (props) => {
     const { cartProducts, cartTotal } = usePage().props;
 
+    const submit = (e) => {
+        e.preventDefault();
+
+        if (!cartProducts.length) return;
+        props.nextStep();
+    };
     return (
         <StepLayout>
             <div className="flex flex-col text-center w-full">
@@ -36,7 +42,7 @@ const ProductCheckStep = (props) => {
                 </div>
             )}
             <div className="flex flex-col text-right w-full pt-20">
-                <StepsFooter step={1} {...props} />
+                <StepsFooter step={1} {...props} nextStep={submit} />
             </div>
         </StepLayout>
     );

@@ -235,7 +235,7 @@ export default function CartModal({ open, setOpen }) {
                                             <div className="mt-6">
                                                 <a
                                                     href={route("checkout")}
-                                                    className="flex items-center justify-center rounded-md border border-transparent bg-green-300 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-green-500"
+                                                    className={`flex items-center justify-center rounded-md border border-transparent bg-green-300 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-green-500 `}
                                                 >
                                                     Checkout
                                                 </a>
