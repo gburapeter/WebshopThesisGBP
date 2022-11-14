@@ -4,6 +4,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useForm, usePage } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 import HoverAnimation from "@/Components/HoverAnimation";
+import EmptyCartMessage from "../Checkout/components/EmptyCartMessage";
 
 export default function CartModal({ open, setOpen }) {
     const { cartProducts, cartTotal } = usePage().props;
@@ -89,6 +90,9 @@ export default function CartModal({ open, setOpen }) {
 
                                             <div className="mt-8">
                                                 <div className="flow-root">
+                                                    {!cartProducts.length && (
+                                                        <EmptyCartMessage classAttr="text-base pt-10" />
+                                                    )}
                                                     <ul
                                                         role="list"
                                                         className="-my-6 divide-y divide-gray-200"
