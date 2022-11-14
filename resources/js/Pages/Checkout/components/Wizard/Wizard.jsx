@@ -31,7 +31,11 @@ const Wizard = ({ address }) => {
                     errors={errors}
                     post={post}
                 />
-                <OrderSummaryStep hashKey={"OrderSummary!"} data={data} />
+                <OrderSummaryStep
+                    hashKey={"OrderSummary!"}
+                    data={data}
+                    post={post}
+                />
             </StepWizard>
         </div>
     );

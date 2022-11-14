@@ -9,7 +9,9 @@ import HoverAnimation from "@/Components/HoverAnimation";
 
 const OrderSummaryStep = (props) => {
     const submit = (e) => {
-        alert("yay");
+        e.preventDefault();
+
+        props.post(route("orders.store"));
     };
     const { cartProducts, cartTotal } = usePage().props;
     return (

@@ -30,4 +30,9 @@ class Address extends Model
     {
         return $this->hasMany(User::class);
     }
+
+    public function shipments()
+    {
+        return $this->hasMany(Shipment::class);
+    }
 }

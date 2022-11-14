@@ -49,7 +49,7 @@ const ProductCard = ({ product }) => {
                 />
             </a>
             <div className="p-6">
-                <span className="inline-block bg-secondary px-3 py-1 text-xs font-medium">
+                <span className="inline-block bg-yellow-200 border text-black px-3 py-1 text-xs font-bold">
                     New
                 </span>
 
@@ -63,8 +63,8 @@ const ProductCard = ({ product }) => {
 
                 <a
                     onClick={submit}
-                    className="mt-4 cursor-pointer flex w-full items-center justify-center rounded-sm bg-gradient-to-r from-sky-100 to-green-200
-                    hover:bg-gradient-to-r hover:from-sky-100 hover:to-green-400 px-8 py-4"
+                    className="mt-4 cursor-pointer flex w-full items-center justify-center rounded-sm bg-indigo-100
+                    hover:bg-indigo-200 px-8 py-4"
                 >
                     <span className="text-sm font-medium"> Add to Cart </span>
 

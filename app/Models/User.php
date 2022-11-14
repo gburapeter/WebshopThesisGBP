@@ -65,10 +65,6 @@ class User extends Authenticatable
 
 
 
-
-
-
-
     /**
      * HasManyDeep
      */
@@ -77,5 +73,10 @@ class User extends Authenticatable
     public function cartProducts()
     {
         return $this->hasManyDeepFromRelations($this->cartItems(), (new CartItem())->product());
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
     }
 }

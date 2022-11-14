@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShipmentController;
@@ -38,13 +39,13 @@ Route::resource('categories', ProductCategoryController::class)
         'categories' => 'product_category'
     ]);
 
-Route::resource('products', ProductController::class)->middleware(['auth', 'verified']);
 
 Route::resource('cartitems', CartItemController::class)->middleware(['auth', 'verified']);
 
 Route::resource('carts', CartController::class)->middleware(['auth', 'verified']);
 
-
+Route::resource('orders', OrderController::class)->middleware(['auth', 'verified']);
+Route::resource('products', ProductController::class)->middleware(['auth', 'verified']);
 
 Route::resource('shipments', ShipmentController::class)->middleware(['auth', 'verified']);
 

@@ -2,12 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class CartSeeder extends Seeder
+class OrderSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,10 +14,6 @@ class CartSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('carts')->insert([
-            'user_id' => User::first()->id,
-
-
-        ]);
+        //
     }
 }

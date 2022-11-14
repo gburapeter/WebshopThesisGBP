@@ -23,7 +23,7 @@ export default function AuthenticatedLayout({ header, children, title }) {
                 />
 
                 <div className="drawer-content">
-                    <div className="min-h-full bg-gradient-to-r from-rose-50 to-cyan-50">
+                    <div className="min-h-full bg-gradient-to-r from-indigo-100 to-rose-50">
                         <Navbar
                             user={auth.user}
                             open={open}
@@ -33,7 +33,7 @@ export default function AuthenticatedLayout({ header, children, title }) {
 
                         {/* <Header title={title} message={auth.user.name} /> */}
                         <main>
-                            <div className="relative min-h-full  overflow-y-auto bg-inherit mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+                            <div className="relative min-h-full rounded-md  overflow-y-auto bg-inherit mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
                                 {children}
                             </div>
                         </main>

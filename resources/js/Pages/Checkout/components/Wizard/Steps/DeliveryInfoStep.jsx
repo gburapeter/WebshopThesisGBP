@@ -10,7 +10,9 @@ const DeliveryInfoStep = (props) => {
     const submit = (e) => {
         e.preventDefault();
 
-        props.nextStep();
+        props.post(route("shipments.store"), {
+            onSuccess: () => props.nextStep(),
+        });
     };
 
     return (

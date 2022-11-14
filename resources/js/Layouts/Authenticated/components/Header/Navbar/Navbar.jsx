@@ -7,7 +7,7 @@ export default function Navbar({ user, open, setOpen }) {
     const { cartItemNr } = usePage().props;
 
     return (
-        <div className="bg-gradient-to-r from-rose-50 to-cyan-50">
+        <div className="bg-gradient-to-r from-indigo-100 to-rose-50">
             <div className="navbar mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="navbar-start ">
                     <a

@@ -83,7 +83,7 @@ const StepNavigation = (props) => {
     const stepOutput = steps.map((step, index) => (
         <a
             key={index}
-            onClick={() => props.goToStep(index + 1)}
+            // onClick={() => props.goToStep(index + 1)}
             className={`sm:px-6 py-3 w-1/2 sm:w-auto ${
                 props.currentStep == index + 1
                     ? "bg-indigo-100 border-indigo-500"

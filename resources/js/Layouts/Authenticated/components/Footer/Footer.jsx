@@ -5,7 +5,7 @@ NavLink;
 
 export default function Footer({}) {
     return (
-        <footer className="footer border-t border-dotted footer-center p-10 bg-gradient-to-r from-rose-50 to-cyan-50 text-base-content rounded">
+        <footer className="footer border-t border-dotted footer-center p-10 bg-gradient-to-r from-indigo-100 to-rose-50 text-base-content rounded">
             <div className="grid grid-flow-col gap-4">
                 <ResponsiveNavLink
                     href={route("home")}

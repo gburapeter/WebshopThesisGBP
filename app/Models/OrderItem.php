@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Shipment extends Model
+class OrderItem extends Model
 {
     use HasFactory;
-
 
     /**
      * The attributes that are mass assignable.
@@ -16,16 +15,8 @@ class Shipment extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'address_id',
-        'shipment_tracking_nr',
-        'shipment_date',
-        'order_id',
-        'shipment_status_id'
+        'quantity',
+        'user_id',
+        'product_id'
     ];
-
-
-    public function address()
-    {
-        return $this->belongsTo(Address::class);
-    }
 }
