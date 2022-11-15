@@ -45,14 +45,14 @@ export const MobileAdvertisement = () => {
                     <div className="w-2/5">
                         <img
                             className="object-cover"
-                            src="https://kitwind.io/assets/kometa/two-girls-phone.png"
+                            src="images/Homepage/mobile1.png"
                             alt=""
                         />
                     </div>
                     <div className="w-5/12 -ml-16 lg:-ml-32">
                         <img
                             className="object-cover"
-                            src="https://i.ibb.co/ZKJpbJX/video-image-a-L4-I2-VOY59.png"
+                            src="images/Homepage/mobile2.png"
                             alt=""
                         />
                     </div>

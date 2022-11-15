@@ -6,7 +6,7 @@ export default function ApplicationLogo({ title }) {
             href="/"
             aria-label="Company"
             title="Company"
-            className="btn btn-ghost inline-flex items-center mr-8 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300"
+            className="btn btn-ghost hover:bg-indigo-200 inline-flex mr-8"
         >
             <svg
                 className="w-8 text-teal-accent-400"
@@ -23,8 +23,7 @@ export default function ApplicationLogo({ title }) {
                 <rect x="14" y="1" width="7" height="6" />
                 <rect x="14" y="11" width="7" height="12" />
             </svg>
-
-            <span className="font-semibold ml-5 normal-case text-3xl">
+            <span className="font-semibold ml-3 normal-case text-3xl">
                 {title}
             </span>
         </a>

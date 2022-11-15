@@ -1,12 +1,12 @@
 import ResponsiveNavLink from "@/Components/Navigation/ResponsiveNavLink";
 import React from "react";
+import LanguageSwitcher from "./components/LanguageSwitcher";
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 const navigation = [
-    { name: "Dashboard", href: "#", current: true },
-    { name: "Team", href: "#", current: false },
-    { name: "Projects", href: "#", current: false },
+    { name: "Orders", href: "orders.index" },
+    { name: "Favourites", href: "home" },
 ];
 export default function Subbar({ user }) {
     return (
@@ -15,13 +15,13 @@ export default function Subbar({ user }) {
                 <div className="flex-1">
                     <a
                         href=""
-                        className="px-3 py-2 rounded-md text-sm font-medium  hover:text-blue-700"
+                        className="px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-200 "
                     >
                         <label
                             htmlFor="my-drawer"
                             className=" cursor-pointer drawer-button "
                         >
-                            <div className="flex items-center btn-ghost">
+                            <div className="flex items-center btn-ghost hover:bg-indigo-200">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -37,7 +37,7 @@ export default function Subbar({ user }) {
                                     />
                                 </svg>
                                 <div>
-                                    <span className="ml-2 font-bold ">
+                                    <span className="ml-2 font-bold  ">
                                         Categories
                                     </span>
                                 </div>
@@ -46,25 +46,15 @@ export default function Subbar({ user }) {
                     </a>
                 </div>
                 <div className="flex-none ">
-                    <div className="border-t border-gray-200 py-6 px-4">
-                        <a href="#" className="-m-2 flex items-center p-2">
-                            <img
-                                src="https://tailwindui.com/img/flags/flag-canada.svg"
-                                alt=""
-                                className="block h-auto w-5 flex-shrink-0"
-                            />
-                            <span className="ml-3 block text-base font-medium text-gray-900">
-                                CAD
-                            </span>
-                            <span className="sr-only">, change currency</span>
-                        </a>
-                    </div>
+                    {/* Language switcher  */}
+                    {/* <LanguageSwitcher /> */}
+
+                    {/* Nav links  */}
                     <div className="ml-10 flex items-baseline space-x-4">
                         {navigation.map((item) => (
                             <ResponsiveNavLink
                                 key={item.name}
-                                href={item.href}
-                                active={route().current("dashboard")}
+                                href={route(item.href)}
                             >
                                 <span className="font-bold text-md">
                                     {item.name}
