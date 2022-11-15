@@ -90,7 +90,7 @@ export default function CartModal({ open, setOpen }) {
 
                                             <div className="mt-8">
                                                 <div className="flow-root">
-                                                    {!cartProducts.length && (
+                                                    {!cartProducts?.length && (
                                                         <EmptyCartMessage classAttr="text-base pt-10" />
                                                     )}
                                                     <ul

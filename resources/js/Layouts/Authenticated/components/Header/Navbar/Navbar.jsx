@@ -1,7 +1,12 @@
 import Dropdown from "@/Components/Navigation/Dropdown";
 import { usePage } from "@inertiajs/inertia-react";
 import React from "react";
+import ProfileDropdown from "./components/ProfileDropdown";
+import MyMenu from "./components/ProfileDropdown";
+import Example2 from "./components/ProfileDropdown";
+import MyDropdown from "./components/ProfileDropdown";
 import SearchBar from "./components/SearchBar";
+import ShoppingCart from "./components/ShoppingCart";
 
 export default function Navbar({ user, open, setOpen }) {
     const { cartItemNr } = usePage().props;
@@ -38,38 +43,15 @@ export default function Navbar({ user, open, setOpen }) {
                     </a>
                 </div>
                 <div className="navbar-center w-1/3  flex-center">
+                    {/* Searchbar  */}
                     <SearchBar />
                 </div>
                 <div className="navbar-end space-x-4">
-                    <div className="dropdown dropdown-end">
-                        <label
-                            tabIndex={0}
-                            className="btn btn-ghost btn-circle"
-                            onClick={() => setOpen(true)}
-                        >
-                            <div className="indicator">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={1.5}
-                                    stroke="currentColor"
-                                    className="w-6 h-6"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                                    />
-                                </svg>
+                    {/* Shopping cart comp  */}
+                    <ShoppingCart cartItemNr={cartItemNr} setOpen={setOpen} />
 
-                                <span className="badge badge-sm indicator-item bg-indigo-500">
-                                    {cartItemNr}
-                                </span>
-                            </div>
-                        </label>
-                    </div>
-                    <button className="btn btn-ghost btn-circle">
+                    {/* Notification component  */}
+                    <button className="btn btn-ghost hover:bg-indigo-200  btn-circle">
                         <div className="indicator">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -90,45 +72,11 @@ export default function Navbar({ user, open, setOpen }) {
                         </div>
                     </button>
 
-                    <div className="dropdown dropdown-end">
-                        <label
-                            tabIndex={0}
-                            className="btn btn-ghost btn-circle avatar"
-                        >
-                            <div className="w-10 rounded-full">
-                                <img src="https://placeimg.com/80/80/people" />
-                            </div>
-                        </label>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-                        >
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a>Settings</a>
-                            </li>
-                            <li>
-                                {/* <a  href={route("logout")}
-                                            method="post"
-                                            as="button">Logout</a> */}
-
-                                <Dropdown.Link
-                                    href={route("logout")}
-                                    method="post"
-                                    as="button"
-                                >
-                                    Log Out
-                                </Dropdown.Link>
-                            </li>
-                        </ul>
-                    </div>
+                    {/* Profile component  */}
+                    <ProfileDropdown />
                 </div>
             </div>
+
             <hr className=" border-green-50" />
         </div>
     );

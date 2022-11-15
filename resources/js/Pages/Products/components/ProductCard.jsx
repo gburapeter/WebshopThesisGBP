@@ -45,7 +45,7 @@ const ProductCard = ({ product }) => {
                 <img
                     alt="Toy"
                     src={product.image_path + "/Main.jpg"}
-                    className="h-56 w-full object-contain lg:h-72"
+                    className="h-56 w-full object-contain lg:h-72 "
                 />
             </a>
             <div className="p-6">
