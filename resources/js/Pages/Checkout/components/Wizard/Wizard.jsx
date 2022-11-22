@@ -6,6 +6,7 @@ import DeliveryInfoStep from "./Steps/DeliveryInfoStep";
 import OrderSummaryStep from "./Steps/OrderSummaryStep";
 import ProductCheckStep from "./Steps/ProductCheckStep";
 import pickBy from "lodash/pickBy";
+import PaymentStep from "./Steps/PaymentStep";
 /* eslint react/prop-types: 0 */
 
 const Wizard = ({ address }) => {
@@ -31,11 +32,8 @@ const Wizard = ({ address }) => {
                     errors={errors}
                     post={post}
                 />
-                <OrderSummaryStep
-                    hashKey={"OrderSummary!"}
-                    data={data}
-                    post={post}
-                />
+                <OrderSummaryStep hashKey={"OrderSummary!"} data={data} />
+                <PaymentStep hashKey={"Payment!"} data={data} post={post} />
             </StepWizard>
         </div>
     );

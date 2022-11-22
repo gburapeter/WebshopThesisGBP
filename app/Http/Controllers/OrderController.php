@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
+use Inertia\Inertia;
 
 class OrderController extends Controller
 {
@@ -21,7 +22,22 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+
+        return Inertia::render(
+            'Orders/Index/Index',
+
+            ['orders' => Auth::user() ? Auth::user()->orders->map(function ($order) {
+                return [
+                    'id' => $order->id,
+                    'total_price' => $order->total_price,
+                    'username' => Auth::user()->name,
+                    'total_items' => $order->orderItems()->count(),
+                    'order_status' => $order->orderStatusCode->name,
+
+                ];
+            }) : null]
+
+        );
     }
 
     /**
@@ -106,7 +122,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        dd($order->id);
     }
 
     /**

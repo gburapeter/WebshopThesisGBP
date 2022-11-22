@@ -11,7 +11,7 @@ const OrderSummaryStep = (props) => {
     const submit = (e) => {
         e.preventDefault();
 
-        props.post(route("orders.store"));
+        props.nextStep();
     };
     const { cartProducts, cartTotal } = usePage().props;
     return (
