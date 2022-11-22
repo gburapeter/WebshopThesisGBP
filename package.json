@@ -25,6 +25,7 @@
         "@emotion/react": "^11.10.5",
         "@heroicons/react": "^2.0.11",
         "@material-tailwind/react": "^1.2.4",
+        "@paypal/react-paypal-js": "^7.8.1",
         "@tailwindcss/aspect-ratio": "^0.4.2",
         "daisyui": "^2.31.0",
         "react-awesome-reveal": "^4.1.0",

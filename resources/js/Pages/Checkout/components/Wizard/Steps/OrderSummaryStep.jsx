@@ -6,12 +6,56 @@ import OrderPreview from "../../OrderPreview";
 import { usePage } from "@inertiajs/inertia-react";
 import OrderProduct from "../../OrderProduct";
 import HoverAnimation from "@/Components/HoverAnimation";
+import { PayPalButtons } from "@paypal/react-paypal-js";
+import { Inertia } from "@inertiajs/inertia";
 
 const OrderSummaryStep = (props) => {
     const submit = (e) => {
         e.preventDefault();
 
         props.nextStep();
+    };
+
+    const handleCreateOrder = (data, actions) => {
+        return fetch("/api/paypal/create", {
+            method: "post",
+            body: JSON.stringify({
+                total_price: cartTotal,
+            }),
+            // use the "body" param to optionally pass additional order information
+            // like product ids or amount
+        })
+            .then((response) => response.json())
+            .then((order) => order.id);
+    };
+
+    const handleApprovedOrder = (data, actions) => {
+        return fetch(`/api/paypal/capture`, {
+            method: "post",
+            body: JSON.stringify({
+                orderId: data.orderID,
+            }),
+        })
+            .then((response) => response.json())
+            .then((orderData) => {
+                // Successful capture! For dev/demo purposes:
+                Inertia.get(route("orders.index"));
+                // console.log(
+                //     "Capture result",
+                //     orderData,
+                //     JSON.stringify(orderData, null, 2)
+                // );
+
+                // const transaction =
+                //     orderData.purchase_units[0].payments.captures[0];
+                // alert(
+                //     `Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`
+                // );
+                // When ready to go live, remove the alert and show a success message within this page. For example:
+                // const element = document.getElementById('paypal-button-container');
+                // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                // Or go to another URL:  actions.redirect('thank_you.html');
+            });
     };
     const { cartProducts, cartTotal } = usePage().props;
     return (
@@ -59,11 +103,25 @@ const OrderSummaryStep = (props) => {
                     </div>
                 </div>
             </section>
-            <div class="mt-8 text-right">
-                <p class="mt-1 text-sm text-gray-500">Total</p>
-                <p class="text-2xl font-medium text-indigo-500 tracking-tight">
-                    ${cartTotal}
-                </p>
+
+            <div class="grid overflow-hidden grid-cols-6 grid-rows-1 gap-2 mt-10">
+                <div class="box col-span-6 text-center">
+                    <h1 className="text-2xl text-center font-bold title-font mb-10 text-gray-900">
+                        Total:{" "}
+                        <span className="text-indigo-500">${cartTotal}</span>
+                    </h1>
+                    <h1 className="text-xl text-center font-bold title-font mb-10 mt-20 text-gray-900">
+                        Complete order by using:
+                    </h1>
+                    <PayPalButtons
+                        createOrder={(data, actions) =>
+                            handleCreateOrder(data, actions)
+                        }
+                        onApprove={(data, actions) =>
+                            handleApprovedOrder(data, actions)
+                        }
+                    />
+                </div>
             </div>
 
             <div className="flex flex-col text-right w-full pt-20">

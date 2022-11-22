@@ -19,12 +19,14 @@ const StepsFooter = ({
             </button>
         )}
 
-        <button
-            onClick={nextStep}
-            className={`w-20 text-center text-black font-bold ml-4 bg-indigo-300 hover:bg-indigo-500 btn-sm  `}
-        >
-            {step < totalSteps ? "Next" : "Submit"}
-        </button>
+        {step < totalSteps && (
+            <button
+                onClick={nextStep}
+                className={`w-20 text-center text-black font-bold ml-4 bg-indigo-300 hover:bg-indigo-500 btn-sm  `}
+            >
+                Next
+            </button>
+        )}
     </div>
 );
 

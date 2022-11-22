@@ -20,7 +20,7 @@ export const NewestProducts = ({ newestProducts }) => {
                     </span>
                 </h2>
             </div>
-            <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 mb-8">
+            <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 mb-8">
                 {newestProducts?.map((product, index) => (
                     <NewestProductCard key={index} product={product} />
                 ))}

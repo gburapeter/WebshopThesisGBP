@@ -1,19 +1,18 @@
 import { useForm, usePage } from "@inertiajs/inertia-react";
+import pickBy from "lodash/pickBy";
 import StepWizard from "react-step-wizard";
 import StepNavigation from "./StepNavigation";
 import BillingInfoStep from "./Steps/BillingInfoStep";
 import DeliveryInfoStep from "./Steps/DeliveryInfoStep";
 import OrderSummaryStep from "./Steps/OrderSummaryStep";
 import ProductCheckStep from "./Steps/ProductCheckStep";
-import pickBy from "lodash/pickBy";
-import PaymentStep from "./Steps/PaymentStep";
 /* eslint react/prop-types: 0 */
 
 const Wizard = ({ address }) => {
     const { auth } = usePage().props;
     const formData = { ...pickBy(address), ...pickBy(auth.user.data) };
     const { data, setData, post, errors } = useForm(formData);
-    console.log(data);
+
     return (
         <div>
             <StepWizard isHashEnabled nav={<StepNavigation />}>
@@ -32,8 +31,11 @@ const Wizard = ({ address }) => {
                     errors={errors}
                     post={post}
                 />
-                <OrderSummaryStep hashKey={"OrderSummary!"} data={data} />
-                <PaymentStep hashKey={"Payment!"} data={data} post={post} />
+                <OrderSummaryStep
+                    hashKey={"OrderSummary!"}
+                    data={data}
+                    post={post}
+                />
             </StepWizard>
         </div>
     );
