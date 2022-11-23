@@ -22,13 +22,12 @@ const SearchBar = () => {
                                         d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
                                     />
                                 </svg>
-                                <i className="absolute fa fa-search text-gray-400 top-5 left-4"></i>
+
                                 <input
                                     type="text"
                                     className="bg-white h-14 w-full px-12 rounded-lg focus:outline-none hover:cursor-pointer"
                                     name=""
                                 />
-                                <span className="absolute top-4 right-5 border-l pl-4"></span>
                             </div>
                         </div>
                     </div>

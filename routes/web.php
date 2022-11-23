@@ -24,47 +24,38 @@ use Inertia\Inertia;
 |
 */
 
+
+// HOMEPAGE
 Route::get('/', function () {
     return Inertia::render('Home/Homepage', [
         'newestProducts' => Product::inRandomOrder()->limit(4)->get(),
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
     ]);
-})
-    // ->middleware(['auth', 'verified'])
-    ->name('home');
+})->name('home');
 
+//PRODUCT CATEGORIES
 Route::resource('categories', ProductCategoryController::class)
     ->parameters([
         'categories' => 'product_category'
     ]);
 
-
-Route::resource('cartitems', CartItemController::class)->middleware(['auth', 'verified']);
-
-Route::resource('carts', CartController::class)->middleware(['auth', 'verified']);
-
-Route::resource('orders', OrderController::class)->middleware(['auth', 'verified']);
-Route::resource('products', ProductController::class)->middleware(['auth', 'verified']);
-
-Route::resource('shipments', ShipmentController::class)->middleware(['auth', 'verified']);
+//PRODIUCTS
+Route::resource('products', ProductController::class);
 
 
-// Route::get('/checkout', function () {
-//     return Inertia::render('Checkout/Index');
-// })->middleware(['auth', 'verified'])->name('checkout');
+//SIGNED IN ROUTES
+Route::middleware(['auth', 'verified'])->group(function () {
 
 
-Route::get('checkout', [CheckoutController::class, 'index'])
-    ->name('checkout');
+    Route::resource('cartitems', CartItemController::class);
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    Route::resource('carts', CartController::class);
 
-Route::get('/simple', function () {
-    return Inertia::render('Simple');
-})->name('simple');
+    Route::resource('orders', OrderController::class);
+
+    Route::resource('shipments', ShipmentController::class);
+
+    Route::get('checkout', [CheckoutController::class, 'index'])
+        ->name('checkout');
+});
+
 require __DIR__ . '/auth.php';
