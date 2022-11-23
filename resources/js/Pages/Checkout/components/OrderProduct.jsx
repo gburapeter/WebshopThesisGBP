@@ -3,35 +3,37 @@ import React from "react";
 const OrderProduct = ({ orderitem }) => {
     return (
         <>
-            <li class="flex items-center justify-between py-4">
-                <div class="flex items-start">
+            <li className="flex items-center justify-between py-4">
+                <div className="flex items-start">
                     <img
                         alt={orderitem.product.product_name}
                         src={orderitem.product.image_path + "/Main.jpg"}
-                        class="h-16 w-16 flex-shrink-0 rounded-lg border object-fill"
+                        className="h-16 w-16 flex-shrink-0 rounded-lg border object-fill"
                     />
 
-                    <div class="ml-4 ">
-                        <p class="text-md">{orderitem.product.product_name}</p>
+                    <div className="ml-4 ">
+                        <p className="text-md">
+                            {orderitem.product.product_name}
+                        </p>
 
-                        <dl class="mt-1 space-y-1 text-xs text-gray-500">
+                        <dl className="mt-1 space-y-1 text-xs text-gray-500">
                             <div>
-                                {/* <dt class="inline">Color:</dt>
-                                <dd class="inline">Blue</dd> */}
+                                {/* <dt className="inline">Color:</dt>
+                                <dd className="inline">Blue</dd> */}
                             </div>
 
                             <div>
-                                {/* <dt class="inline">Size:</dt>
-                                <dd class="inline">UK 10</dd> */}
+                                {/* <dt className="inline">Size:</dt>
+                                <dd className="inline">UK 10</dd> */}
                             </div>
                         </dl>
                     </div>
                 </div>
 
                 <div>
-                    <p class="text-md text-indigo-800 font-bold">
+                    <p className="text-md text-indigo-800 font-bold">
                         ${orderitem.product.product_price}{" "}
-                        <small class="text-black font-bold">
+                        <small className="text-black font-bold">
                             x{orderitem.quantity}
                         </small>
                     </p>

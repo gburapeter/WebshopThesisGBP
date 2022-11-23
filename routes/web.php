@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\ProductCategoryController;
@@ -56,6 +57,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('checkout', [CheckoutController::class, 'index'])
         ->name('checkout');
+
+    Route::delete('delete/{notification}', [NotificationController::class, 'delete'])->name('notifications.delete');
 });
 
 require __DIR__ . '/auth.php';

@@ -54,7 +54,7 @@ class HandleInertiaRequests extends Middleware
 
                 ];
             }),
-
+            'notifications' => Auth::user() ? Auth::user()->notifications : null,
             'cartItemNr' => Auth::user() ? Auth::user()->cart()->withCount('cartItems')->first()->cart_items_count : null,
             'cartTotal' => Auth::user() ? Auth::user()->cart->totalCalculation() : null,
             'cartProducts' => Auth::user() ? Auth::user()->cartItems->map(function ($product) {

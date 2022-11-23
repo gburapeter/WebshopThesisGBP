@@ -8,9 +8,9 @@ const ShippingInfo = () => {
             </h3>
             <div className="flex justify-between items-start w-full">
                 <div className="flex justify-center items-center space-x-4">
-                    <div class="w-16 h-16">
+                    <div className="w-16 h-16">
                         <img
-                            class="w-full h-full"
+                            className="w-full h-full"
                             alt="logo"
                             src="../images/OrderShow/logo_thumb.png"
                         />

@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Address;
 use App\Models\Order;
 use App\Models\OrderStatusCode;
+use App\Notifications\OrderCreated;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -74,6 +75,7 @@ class OrderController extends Controller
 
         ]);
 
+        $user->notify(new OrderCreated($order));
 
         //ORDER ITEMS
         foreach ($user->cartItems as $cartItem) {
@@ -107,7 +109,7 @@ class OrderController extends Controller
             'shipment_status_id' => 1,
         ]);
 
-        return Redirect::route('orders.index');
+        return Redirect::route('home');
     }
 
 

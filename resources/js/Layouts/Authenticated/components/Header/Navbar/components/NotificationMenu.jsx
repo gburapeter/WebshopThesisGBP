@@ -1,8 +1,13 @@
+import { usePage } from "@inertiajs/inertia-react";
 import React from "react";
 
-const NotificationMenu = () => {
+const NotificationMenu = ({ setNotisOpen }) => {
+    const { notifications } = usePage().props;
     return (
-        <button className="btn btn-ghost hover:bg-indigo-200  btn-circle">
+        <button
+            className="btn btn-ghost hover:bg-indigo-200  btn-circle"
+            onClick={() => setNotisOpen(true)}
+        >
             <div className="indicator">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +24,9 @@ const NotificationMenu = () => {
                     />
                 </svg>
 
-                <span className="badge badge-xs badge-primary indicator-item bg-indigo-500"></span>
+                <span className="badge badge-sm indicator-item bg-indigo-500">
+                    {notifications.length}
+                </span>
             </div>
         </button>
     );

@@ -6,10 +6,13 @@ import CartModal from "@/Pages/Cart/CartModal";
 import { usePage } from "@inertiajs/inertia-react";
 import { useState } from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import NotificationModal from "@/Pages/Notifications/NotificationModal";
 
 export default function AuthenticatedLayout({ header, children, title }) {
     const { auth } = usePage().props;
     const [open, setOpen] = useState(false);
+    const [notisOpen, setNotisOpen] = useState(false);
+
     return (
         <PayPalScriptProvider
             options={{
@@ -32,6 +35,7 @@ export default function AuthenticatedLayout({ header, children, title }) {
                                 user={auth.user}
                                 open={open}
                                 setOpen={setOpen}
+                                setNotisOpen={setNotisOpen}
                             />
                             <Subbar user={auth.user} />
 
@@ -43,6 +47,10 @@ export default function AuthenticatedLayout({ header, children, title }) {
                             </main>
                             <Footer />
                             <CartModal open={open} setOpen={setOpen} />
+                            <NotificationModal
+                                notisOpen={notisOpen}
+                                setNotisOpen={setNotisOpen}
+                            />
                         </div>
                     </div>
                     <div className="drawer-side">

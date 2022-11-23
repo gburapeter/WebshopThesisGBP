@@ -72,17 +72,17 @@ const OrderSummaryStep = (props) => {
             </div>
 
             <section>
-                <div class="relative mx-auto ">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
+                <div className="relative mx-auto ">
+                    <div className="grid grid-cols-1 md:grid-cols-2">
                         <HoverAnimation classAttr="border border-indigo-500 shadow-lg">
                             <div
                                 onClick={() => props.goToStep(1)}
-                                class="bg-white py-4 md:py-4 cursor-pointer "
+                                className="bg-white py-4 md:py-4 cursor-pointer "
                             >
-                                <div class="mx-auto max-w-lg px-4 lg:px-8">
-                                    <div class="pt-10 pb-10">
-                                        <div class="flow-root h-60 overflow-y-auto ">
-                                            <ul class="-my-4 divide-y divide-gray-200 ">
+                                <div className="mx-auto max-w-lg px-4 lg:px-8">
+                                    <div className="pt-10 pb-10">
+                                        <div className="flow-root h-60 overflow-y-auto ">
+                                            <ul className="-my-4 divide-y divide-gray-200 ">
                                                 {cartProducts?.map(
                                                     (orderitem, index) => (
                                                         <OrderProduct
@@ -99,7 +99,7 @@ const OrderSummaryStep = (props) => {
                                 </div>
                             </div>
                         </HoverAnimation>
-                        <div class="bg-white">
+                        <div className="bg-white">
                             <OrderPreview
                                 goToStep={props.goToStep}
                                 data={props.data}
@@ -109,8 +109,8 @@ const OrderSummaryStep = (props) => {
                 </div>
             </section>
 
-            <div class="grid overflow-hidden grid-cols-6 grid-rows-1 gap-2 mt-10">
-                <div class="box col-span-6 text-center">
+            <div className="grid overflow-hidden grid-cols-6 grid-rows-1 gap-2 mt-10">
+                <div className="box col-span-6 text-center">
                     <h1 className="text-2xl text-center font-bold title-font mb-10 text-gray-900">
                         Total:{" "}
                         <span className="text-indigo-500">${cartTotal}</span>
