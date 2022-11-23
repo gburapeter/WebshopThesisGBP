@@ -18,7 +18,8 @@ class Order extends Model
         'total_price',
         'description',
         'user_id',
-        'order_status_code_id'
+        'order_status_code_id',
+        'reference_number'
 
     ];
 
@@ -26,6 +27,8 @@ class Order extends Model
     {
         return $this->hasMany(OrderItem::class);
     }
+
+
 
     public function orderStatusCode()
     {

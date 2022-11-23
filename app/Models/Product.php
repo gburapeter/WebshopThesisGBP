@@ -63,4 +63,9 @@ class Product extends Model
     {
         return $this->hasOne(ProductStock::class);
     }
+
+    public function orderItem()
+    {
+        return $this->hasOne(OrderItem::class);
+    }
 }

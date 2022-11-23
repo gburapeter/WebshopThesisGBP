@@ -6,6 +6,7 @@ export const OrdersTable = ({ orders }) => {
             <tbody className="divide-y cursor-pointer">
                 {orders.map((order, index) => (
                     <tr
+                        key={index}
                         onClick={() =>
                             Inertia.visit(route("orders.show", [order]))
                         }
@@ -20,7 +21,7 @@ export const OrdersTable = ({ orders }) => {
                                 </div>
                                 <div className="pl-2">
                                     <p className="text-sm font-medium leading-none text-gray-800">
-                                        Order #{order.id}
+                                        Order #{order.reference_number}
                                     </p>
                                 </div>
                             </div>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('total_price');
             $table->string('description');
+            $table->string('reference_number');
             $table->foreignId('user_id')
                 ->constrained()
                 ->onUpdate('cascade')

@@ -28,7 +28,7 @@ const OrderSummaryStep = (props) => {
             .then((response) => response.json())
             .then((order) => order.id);
     };
-
+    // ;!p7tRx#
     const handleApprovedOrder = (data, actions) => {
         return fetch(`/api/paypal/capture`, {
             method: "post",
@@ -38,8 +38,13 @@ const OrderSummaryStep = (props) => {
         })
             .then((response) => response.json())
             .then((orderData) => {
+                console.log(orderData);
                 // Successful capture! For dev/demo purposes:
-                Inertia.get(route("orders.index"));
+                Inertia.post(route("orders.store"), {
+                    ...props.data,
+                    reference_number: orderData.id,
+                    status: orderData.status,
+                });
                 // console.log(
                 //     "Capture result",
                 //     orderData,

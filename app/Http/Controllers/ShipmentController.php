@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreShipmentRequest;
 use App\Http\Requests\UpdateShipmentRequest;
 use App\Models\Shipment;
+use Illuminate\Validation\Rule;
 
 class ShipmentController extends Controller
 {
@@ -39,7 +40,7 @@ class ShipmentController extends Controller
         $request->validate([
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|',
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignoreModel($request->user())],
             'phone' => 'required',
             'country' => 'required',
             'street_name' => 'required',

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\OrderStatusCode as EnumsOrderStatusCode;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Address;
@@ -11,6 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use Inertia\Inertia;
 
 class OrderController extends Controller
@@ -30,6 +32,7 @@ class OrderController extends Controller
                 return [
                     'id' => $order->id,
                     'total_price' => $order->total_price,
+                    'reference_number' => $order->reference_number,
                     'username' => Auth::user()->name,
                     'total_items' => $order->orderItems()->count(),
                     'order_status' => $order->orderStatusCode->name,
@@ -66,7 +69,8 @@ class OrderController extends Controller
             'total_price' =>  $user->cart->totalCalculation(),
             'description' => 'No notes',
             'user_id' => $user->id,
-            'order_status_code_id' => OrderStatusCode::find(2)->id,
+            'reference_number' => $request->reference_number,
+            'order_status_code_id' => EnumsOrderStatusCode::fromKey($request->status)->value,
 
         ]);
 
@@ -82,33 +86,28 @@ class OrderController extends Controller
         //DELETE CART
         $user->cartItems()->delete();
 
-        $address = $request->id != null
-            ? Address::find($request->id)
-            : Address::create(
-                $request->validate([
-                    'firstname' => 'required|string|max:255',
-                    'lastname' => 'required|string|max:255',
-                    'email' => 'required|string|email|max:255|unique:users',
-                    'phone' => 'required',
-                    'country' => 'required',
-                    'street_name' => 'required',
-                    'street_number' => 'required|numeric',
-                    'suite' => 'required',
-                    'city' => 'required',
-                    'state' => 'required',
-                    'postal_code' => 'required',
-                ])
-            );
+        $user->address->fill($request->validate([
+            // 'firstname' => 'required|string|max:255',
+            // 'lastname' => 'required|string|max:255',
+            // 'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignoreModel($request->user())],
+            // 'phone' => 'required',
+            'country' => 'required',
+            'street_name' => 'required',
+            'street_number' => 'required|numeric',
+            'suite' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'postal_code' => 'required',
+        ]))->save();
 
-
-        $address->shipments()->create([
+        $user->address->shipments()->create([
             'shipment_tracking_nr' => Str::upper(Str::random(7)),
             'shipment_date' => Carbon::now()->addDays(4)->format('Y-m-d'),
-            'order_id' => 1,
+            'order_id' => $order->id,
             'shipment_status_id' => 1,
         ]);
 
-        return Redirect::route('home');
+        return Redirect::route('orders.index');
     }
 
 
@@ -122,7 +121,37 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        dd($order->id);
+        return Inertia::render(
+            'Orders/Show/Show',
+            [
+                'order' =>
+                [
+                    'id' => $order->id,
+                    'reference_number' => $order->reference_number,
+                    'total_price' => $order->total_price,
+                    'description' => $order->description,
+                    'updated_at' => $order->updated_at->toDateTimeString(),
+
+                ],
+                'orderItems' => $order->orderItems->map(function ($order) {
+                    return [
+
+                        'quantity' => $order->quantity,
+                        'product_name' => $order->product->product_name,
+                        'product_price' => $order->product->product_price,
+                        'image_path' => $order->product->image_path,
+
+
+                    ];
+                }),
+
+                'user' => $order->user->only('name', 'phone', 'email'),
+                'address' => $order->user->address
+                    ->only('id', 'street_name', 'street_number', 'suite', 'country', 'city', 'state', 'postal_code')
+            ],
+
+
+        );
     }
 
     /**

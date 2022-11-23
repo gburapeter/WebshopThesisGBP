@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Enums\OrderStatusCode;
+use App\Models\Order;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16,15 +18,12 @@ class OrderStatusCodeSeeder extends Seeder
     public function run()
     {
 
-        $statuses = [
-            ['Pending', 'The order is currently pending'],
-            ['Accepted', 'The order payment was succesfull'],
-            ['Closed', 'The order was delivered and put into archive']
-        ];
-        foreach ($statuses as $status) {
+
+
+        foreach (OrderStatusCode::getKeys() as $status) {
             DB::table('order_status_codes')->insert([
-                'name' => $status[0],
-                'description' => $status[1],
+                'name' => $status,
+
 
             ]);
         }
