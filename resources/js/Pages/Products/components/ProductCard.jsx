@@ -19,10 +19,6 @@ const ProductCard = ({ product }) => {
                 className=" relative block bg-white"
             >
                 <button
-                    onClick={() => {
-                        e.preventDefault();
-                        alert("asd");
-                    }}
                     type="button"
                     className="absolute right-4 top-4 rounded-full bg-black p-2 text-white"
                 >
@@ -43,15 +39,19 @@ const ProductCard = ({ product }) => {
                     </svg>
                 </button>
                 <img
-                    alt="Toy"
+                    alt={product.product_name}
                     src={product.image_path + "/Main.jpg"}
                     className="h-56 w-full object-contain lg:h-72 "
                 />
             </a>
             <div className="p-6">
-                <span className="inline-block bg-yellow-400 border text-black px-3 py-1 text-xs font-bold">
-                    New
-                </span>
+                {product.isNew ? (
+                    <span className="inline-block bg-yellow-400 border text-black px-3 py-1 text-xs font-bold">
+                        New
+                    </span>
+                ) : (
+                    <span className="inline-block bg-base mt-3 text-black px-3 py-1 text-xs font-bold"></span>
+                )}
 
                 <h3 className="mt-4 text-lg font-bold">
                     {product.product_name}

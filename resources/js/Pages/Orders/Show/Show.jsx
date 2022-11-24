@@ -5,6 +5,7 @@ import ShippingInfo from "./components/ShippingInfo";
 import SummaryBox from "./components/SummaryBox";
 
 export const Show = ({ order, address, user, orderItems }) => {
+    console.log(orderItems);
     return (
         <div className="bg-white py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
             <div className="flex justify-start item-start space-y-2 flex-col ">

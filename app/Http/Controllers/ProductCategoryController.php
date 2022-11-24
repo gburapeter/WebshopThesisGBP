@@ -6,7 +6,7 @@ use App\Http\Requests\StoreProductCategoryRequest;
 use App\Http\Requests\UpdateProductCategoryRequest;
 use App\Models\Product;
 use App\Models\ProductCategory;
-
+use Carbon\Carbon;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Request;
 
@@ -52,7 +52,8 @@ class ProductCategoryController extends Controller
     {
 
         return Inertia::render('ProductCategories/Show', [
-            'productCategory' => $productCategory->id,
+            'productCategory' => $productCategory->only('id', 'category_name'),
+            'siblingCategories' => $productCategory->parentCategory->categories()->where('id', '!=', $productCategory->id)->get(),
             'products' => $productCategory->products()
                 ->ordering()
                 ->filter(Request::only('search'))
@@ -64,6 +65,7 @@ class ProductCategoryController extends Controller
                         'product_name' => $product->product_name,
                         'product_price' => $product->product_price,
                         'image_path' => $product->image_path,
+                        'isNew' => $product->created_at > Carbon::now()->subDays(5)->toDateTimeString() ? true : false,
 
                     ];
                 }),

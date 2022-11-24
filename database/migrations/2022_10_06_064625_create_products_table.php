@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('product_name');
             $table->decimal('product_price');
             $table->string('sku');
-            $table->string('description');
+            $table->text('description');
             $table->string('image_path');
             $table->foreignId('product_category_id')
                 ->constrained()

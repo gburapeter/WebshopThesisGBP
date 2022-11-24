@@ -1,73 +1,60 @@
-
-
 {
     "products": [
-
         {
             "product_name": "Macbook Air (M1, 2020)",
             "product_price": "999",
             "sku": "1",
-            "description":"Macbook",
-            "image_path":"images/Products/Laptops/Apple/MacAirM1/",
-            "product_category_id":"2"
-
+            "description": "The Apple MacBook Air 13 (M1, 2020) is a laptop that features Apple's M1 SoC (System-on-Chip). It's very easy to carry around due to its compact size, and its battery easily lasts through a typical 8-hour workday. It has a good keyboard, an excellent touchpad, and a great webcam for video calls. It doesn't get overly hot, and it remains completely silent under load due to its fanless design.",
+            "image_path": "images/Products/Laptops/Apple/MacAirM1/",
+            "product_category_id": "2"
         },
         {
             "product_name": "Macbook Air (M2, 2022)",
             "product_price": "1199",
             "sku": "1",
-            "description":"Macbook",
-            "image_path":"images/Products/Laptops/Apple/MacAirM2/",
-            "product_category_id":"2"
-
+            "description": "That’s because the new 2022 MacBook Air, powered by Apple’s in-house M2 silicon, is just about the ideal work-from-home (or work-from-wherever, really) companion. For a starting price of $1,200, this new M2 Air delivers everything you need any job centered around using a computer: Rock-solid battery life, a larger 13.6-inch display than previous models, a keyboard that’s to die for, and enough horsepower to handle everyday tasks with ease.",
+            "image_path": "images/Products/Laptops/Apple/MacAirM2/",
+            "product_category_id": "2"
         },
         {
             "product_name": "MacBook Air (Ret, 2020)",
             "product_price": "1099",
             "sku": "1",
-            "description":"Macbook",
-            "image_path":"images/Products/Laptops/Apple/MacAirRet/",
-            "product_category_id":"2"
-
+            "description": "Providing both portability and performance, the Gold Apple 13.3 MacBook Air with Retina Display houses a 1.1 GHz 10th Gen Intel Core i5 Quad-Core processor, which can be boosted up to 3.5 GHz, and 8GB of 3733 MHz LPDDR4X RAM in its trademark thin and light unibody wedge design made from 100% recycled aluminum",
+            "image_path": "images/Products/Laptops/Apple/MacAirRet/",
+            "product_category_id": "2"
         },
         {
             "product_name": "MacBook Pro 13-in. (M2, 2022)",
             "product_price": "1299",
             "sku": "1",
-            "description":"Macbook",
-            "image_path":"images/Products/Laptops/Apple/MacProM2/",
-            "product_category_id":"2"
-
+            "description": "The new M2 chip makes the 13‑inch MacBook Pro more capable than ever. The same compact design supports up to 20 hours of battery life1 and an active cooling system to sustain enhanced performance. Featuring a brilliant Retina display, a FaceTime HD camera, and studio‑quality mics, it’s our most portable pro laptop.",
+            "image_path": "images/Products/Laptops/Apple/MacProM2/",
+            "product_category_id": "2"
         },
         {
             "product_name": "MacBook Pro 13-in. (M1, 2020)",
             "product_price": "1299",
             "sku": "1",
-            "description":"Macbook",
-            "image_path":"images/Products/Laptops/Apple/MacProM1/",
-            "product_category_id":"2"
-
+            "description": "M1 has transformed our most popular systems with incredible performance, custom technologies, and industry-leading power efficiency. No one has ever applied a system-on-a-chip design to a pro system until today with M1 Pro and M1 Max",
+            "image_path": "images/Products/Laptops/Apple/MacProM1/",
+            "product_category_id": "2"
         },
         {
             "product_name": "MacBook Pro 14-in. (M1, 2021)",
             "product_price": "1999",
             "sku": "1",
-            "description":"Macbook",
-            "image_path":"images/Products/Laptops/Apple/MacPro14M1/",
-            "product_category_id":"2"
-
+            "description": "The 14-inch MacBook Pro is a new size class that sits comfortably between the 13-inch MacBook Pro and 16-inch MacBook Pro. The edge-to-edge display, 0.61-inch thick chassis, and 3.5-pound weight make for a small yet powerful machine.",
+            "image_path": "images/Products/Laptops/Apple/MacPro14M1/",
+            "product_category_id": "2"
         },
         {
             "product_name": "MacBook Pro 16-in. (M1, 2021)",
             "product_price": "2699",
             "sku": "1",
-            "description":"Macbook",
-            "image_path":"images/Products/Laptops/Apple/MacPro16M1/",
-            "product_category_id":"2"
-
+            "description": "The MacBook Pro 2021 (16-inch) is a much-improved version of its predecessor that, when kitted out with the latest in Apple silicon, sets a new high-water mark for MacBook performance. Its beautiful new Liquid Retina XDR display makes just about everything you do on it look good, and the 1080p webcam up top helps you look your best on video calls with friends and colleagues. ",
+            "image_path": "images/Products/Laptops/Apple/MacPro16M1/",
+            "product_category_id": "2"
         }
-
-
-
     ]
 }

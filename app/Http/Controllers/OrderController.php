@@ -76,8 +76,7 @@ class OrderController extends Controller
 
         ]);
 
-        $user->notify(new OrderCreated($order));
-        PaymentProcessed::dispatch($order);
+
 
         //ORDER ITEMS
         foreach ($user->cartItems as $cartItem) {
@@ -111,7 +110,10 @@ class OrderController extends Controller
             'shipment_status_id' => 1,
         ]);
 
-        return Redirect::route('home');
+
+        $user->notify(new OrderCreated($order));
+        PaymentProcessed::dispatch($order);
+        return to_route('home');
     }
 
 
