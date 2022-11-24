@@ -17,6 +17,17 @@ const NotificationList = () => {
                         notification={notification}
                     />
                 ))}
+                {!notifications.length && (
+                    <div className="mt-40 border">
+                        {" "}
+                        <h1 className="px-4 pt-8 pb-4 text-center text-3xl font-bold leading-10 text-indigo-500">
+                            Oops!{" "}
+                        </h1>
+                        <p className="px-4 pb-10 text-base leading-none text-center text-gray-600">
+                            Looks like you have no new notifications
+                        </p>
+                    </div>
+                )}
             </ul>
         </div>
     );

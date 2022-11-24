@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\OrderStatusCode as EnumsOrderStatusCode;
+use App\Events\PaymentProcessed;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Address;
@@ -76,6 +77,7 @@ class OrderController extends Controller
         ]);
 
         $user->notify(new OrderCreated($order));
+        PaymentProcessed::dispatch($order);
 
         //ORDER ITEMS
         foreach ($user->cartItems as $cartItem) {

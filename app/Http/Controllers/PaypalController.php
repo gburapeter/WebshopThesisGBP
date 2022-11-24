@@ -59,6 +59,7 @@ class PaypalController extends Controller
 
         $order = $provider->capturePaymentOrder($order_id);
 
+
         return response()->json($order);
     }
 }
