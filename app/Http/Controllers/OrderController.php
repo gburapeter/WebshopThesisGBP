@@ -113,7 +113,7 @@ class OrderController extends Controller
 
         $user->notify(new OrderCreated($order));
         PaymentProcessed::dispatch($order);
-        return to_route('home');
+        // return to_route('home');
     }
 
 
