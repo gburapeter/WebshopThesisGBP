@@ -1,7 +1,9 @@
 import { usePage } from "@inertiajs/inertia-react";
-import React from "react";
+import React, { useContext } from "react";
+import { NotificationDrawerContext } from "../../../../AuthenticatedLayout";
 
-const NotificationMenu = ({ setNotisOpen }) => {
+const NotificationMenu = () => {
+    const { setNotisOpen } = useContext(NotificationDrawerContext);
     const { notifications } = usePage().props;
     return (
         <button

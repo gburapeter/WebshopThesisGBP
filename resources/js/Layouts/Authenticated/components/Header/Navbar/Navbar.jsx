@@ -6,7 +6,7 @@ import SearchBar from "./components/SearchBar";
 import ShoppingCart from "./components/ShoppingCart";
 import GuestButton from "./components/GuestButton";
 
-export default function Navbar({ setOpen, setNotisOpen }) {
+export default function Navbar({ setOpen }) {
     const { cartItemNr, auth } = usePage().props;
 
     return (
@@ -30,7 +30,7 @@ export default function Navbar({ setOpen, setNotisOpen }) {
                             />
 
                             {/* Notification component  */}
-                            <NotificationMenu setNotisOpen={setNotisOpen} />
+                            <NotificationMenu />
 
                             {/* Profile component  */}
                             <ProfileDropdown />
