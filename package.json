@@ -32,7 +32,6 @@
         "react-headless-tabs": "^6.0.2",
         "react-step-wizard": "^5.3.11",
         "react-use": "^17.4.0",
-        "swiper": "^8.4.2",
-        "ziggy-js": "^1.5.0"
+        "swiper": "^8.4.2"
     }
 }

@@ -1655,11 +1655,6 @@ qs@^6.9.0:
   dependencies:
     side-channel "^1.0.4"
 
-qs@~6.9.7:
-  version "6.9.7"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.7.tgz#4610846871485e1e048f44ae3b94033f0e675afe"
-  integrity sha512-IhMFgUmuNpyRfxA90umL7ByLlgRXu6tIfKPpF5TmcfRLlLCckfP/g3IQmju6jjpu+Hh8rA+2p6A27ZSPOOHdKw==
-
 queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
@@ -2072,10 +2067,3 @@ yaml@^1.10.0, yaml@^1.10.2:
   version "1.10.2"
   resolved "https://registry.npmjs.org/yaml/-/yaml-1.10.2.tgz"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
-
-ziggy-js@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/ziggy-js/-/ziggy-js-1.5.0.tgz#e7cbb944928582943278c7beed7a4c5749785658"
-  integrity sha512-whzY4H/EMEKrXbbqQbncrSy9WN8N6sjzbVPdBjhQMauvODWtNUTDMq6Po55hPDx43GRFtIF22zrs/m2Z3qOi4g==
-  dependencies:
-    qs "~6.9.7"
