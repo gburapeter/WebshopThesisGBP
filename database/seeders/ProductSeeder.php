@@ -26,7 +26,7 @@ class ProductSeeder extends Seeder
                 'product_price' => $product->product_price,
                 'sku' => $product->sku,
                 'description' => $product->description,
-                'image_path' => asset($product->image_path),
+                'image_path' => secure_asset($product->image_path),
                 'product_category_id' => $product->product_category_id
             ]);
 
