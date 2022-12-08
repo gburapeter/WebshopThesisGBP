@@ -29,7 +29,7 @@ createInertiaApp({
         return page;
     },
     setup({ el, App, props }) {
-        var route = (name, params, absolute, config = Ziggy) => route(name, params, absolute, config);
+        route = (name, params, absolute, config = Ziggy) => route(name, params, absolute, config);
         return render(<App {...props} />, el);
     },
 });
