@@ -18,8 +18,13 @@ class Product extends Model
         'description',
         'image_path',
         'product_category_id',
+        'updated_at',
+        'created_at'
+
 
     ];
+
+
 
 
     public function scopeM1($query)
