@@ -15,10 +15,13 @@ class ProductCategory extends Model
      *
      * @var array<int, string>
      */
+
+
     protected $fillable = [
         'category_name',
         'category_code',
         'category_description',
+        'image_path',
         'parent_category_id',
 
     ];

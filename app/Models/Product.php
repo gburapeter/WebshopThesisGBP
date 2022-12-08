@@ -11,6 +11,17 @@ class Product extends Model
     use HasFactory;
 
 
+    protected $fillable = [
+        'product_name',
+        'product_price',
+        'sku',
+        'description',
+        'image_path',
+        'product_category_id',
+
+    ];
+
+
     public function scopeM1($query)
     {
         return $query->where('product_name', 'LIKE', '%' . 'M1' . '%');
