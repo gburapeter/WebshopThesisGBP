@@ -32,8 +32,11 @@
         "react-headless-tabs": "^6.0.2",
         "react-step-wizard": "^5.3.11",
         "react-use": "^17.4.0",
-        "rollup": "^3.7.0",
+
         "swiper": "^8.4.2"
-    }
+    },
+    "overrides": {
+        "rollup": "2.74.1"
+      }
 
 }
