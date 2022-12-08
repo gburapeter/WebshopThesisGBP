@@ -6,8 +6,9 @@ import React from "react";
 import { render } from "react-dom";
 import { createInertiaApp } from "@inertiajs/inertia-react";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
-import route from "ziggy-js";
-import { Ziggy } from '@/ziggy'
+
+import { Ziggy } from '@/ziggy';
+
 const appName =
     window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
 const AuthenticatedTemplate = (page) => <AuthenticatedLayout children={page} />;
@@ -19,6 +20,7 @@ createInertiaApp({
             import.meta.glob("./Pages/**/*.jsx")
         );
 
+
         page.then((module) => {
             if (!name.startsWith("Auth/")) {
                 module.default.layout =
@@ -29,7 +31,7 @@ createInertiaApp({
         return page;
     },
     setup({ el, App, props }) {
-        route = (name, params, absolute, config = Ziggy) => route(name, params, absolute, config);
+        var route = (name, params, absolute, config = Ziggy) => route(name, params, absolute, config);
         return render(<App {...props} />, el);
     },
 });
