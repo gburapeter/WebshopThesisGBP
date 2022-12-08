@@ -32,7 +32,7 @@ createInertiaApp({
     },
     setup({ el, App, props, }) {
 
-
+        
         return render(<App {...props} />, el);
     },
 });
