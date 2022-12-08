@@ -30,9 +30,9 @@ createInertiaApp({
         });
         return page;
     },
-    setup({ el, App, props, }) {
+    setup({ el, App, props }) {
 
-        
+
         return render(<App {...props} />, el);
     },
 });

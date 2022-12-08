@@ -13,8 +13,8 @@
     <!-- Scripts -->
     {{-- <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script> --}}
     <?php echo app('Tightenco\Ziggy\BladeRouteGenerator')->generate(); ?>
-    @inertiaHead
     @viteReactRefresh
+    @inertiaHead
     @vite('resources/js/app.jsx')
 </head>
 
