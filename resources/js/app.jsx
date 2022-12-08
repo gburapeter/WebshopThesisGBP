@@ -27,11 +27,11 @@ createInertiaApp({
                     module.default.layout || AuthenticatedTemplate;
             }
         });
-
+        global.route = (name, params, absolute, config = Ziggy) => route(name, params, absolute, config);
         return page;
     },
     setup({ el, App, props }) {
-        var route = (name, params, absolute, config = Ziggy) => route(name, params, absolute, config);
+
         return render(<App {...props} />, el);
     },
 });
