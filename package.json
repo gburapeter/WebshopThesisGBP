@@ -29,6 +29,7 @@
         "@tailwindcss/aspect-ratio": "^0.4.2",
         "daisyui": "^2.31.0",
         "react-awesome-reveal": "^4.1.0",
+        "react-flying-item": "^1.1.2",
         "react-headless-tabs": "^6.0.2",
         "react-step-wizard": "^5.3.11",
         "react-use": "^17.4.0",
