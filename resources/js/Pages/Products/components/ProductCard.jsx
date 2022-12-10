@@ -1,7 +1,7 @@
 import { Square2StackIcon } from "@heroicons/react/20/solid";
 import { useForm } from "@inertiajs/inertia-react";
 import React from "react";
-import  FlyingButton  from 'react-flying-item';
+
 
 const ProductCard = ({ product }) => {
     const { data, setData, post, processing, errors } = useForm({
