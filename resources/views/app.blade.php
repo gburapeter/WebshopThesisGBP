@@ -23,7 +23,7 @@
     @else
         {{-- <script type="module" src="http://localhost:3000/@vite/client"></script>
         <script type="module" src="http://localhost:3000/resources/js/app.js"></script> --}}
-        @routes
+        <?php echo app('Tightenco\Ziggy\BladeRouteGenerator')->generate(); ?>
         @viteReactRefresh
         @vite('resources/js/app.jsx')
         @inertiaHead

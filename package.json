@@ -1,6 +1,7 @@
 {
     "private": true,
     "scripts": {
+         "start": "node --optimize_for_size --max_old_space_size=460 dist/main.js",
         "dev": "vite",
         "build": "vite build",
         "preview": "vite preview --port 8080"
