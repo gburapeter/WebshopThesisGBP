@@ -40,13 +40,14 @@ class CartItemController extends Controller
     public function store(StoreCartItemRequest $request)
     {
 
+
         Request::validate([
             'id' => ['required', 'integer'],
 
         ]);
 
         $cartItem = CartItem::firstOrNew(
-            ['product_id' => $request->id],
+            ['product_id' => $request->id, 'cart_id' => Auth::user()->cart->id],
             [
                 'cart_id' => Auth::user()->cart->id,
 
@@ -54,6 +55,7 @@ class CartItemController extends Controller
         );
         $cartItem->quantity += 1;
         $cartItem->save();
+        // dd($cartItem);
 
         // CartItem::create([
         //     'product_id' => $request->id,

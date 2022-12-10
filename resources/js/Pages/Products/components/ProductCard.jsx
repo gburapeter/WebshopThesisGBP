@@ -1,6 +1,7 @@
 import { Square2StackIcon } from "@heroicons/react/20/solid";
 import { useForm } from "@inertiajs/inertia-react";
 import React from "react";
+import  FlyingButton  from 'react-flying-item';
 
 const ProductCard = ({ product }) => {
     const { data, setData, post, processing, errors } = useForm({
@@ -8,7 +9,7 @@ const ProductCard = ({ product }) => {
     });
 
     const submit = (e) => {
-        e.preventDefault();
+
 
         post(route("cartitems.store"));
     };
@@ -38,11 +39,14 @@ const ProductCard = ({ product }) => {
                         ></path>
                     </svg>
                 </button>
+
+
                 <img
                     alt={product.product_name}
                     src={product.image_path + "/Main.jpg"}
                     className="h-56 w-full object-contain lg:h-72 "
-                />
+                    />
+
             </a>
             <div className="p-6">
                 {product.isNew ? (
@@ -61,12 +65,13 @@ const ProductCard = ({ product }) => {
                     ${product.product_price}
                 </p>
 
+                <FlyingButton flyingItemStyling={{ "zIndex": "10" }} src={product.image_path + "/Main.jpg"} animationDuration={1} targetTop={'-20%'} targetLeft={'80%'}>
                 <a
                     onClick={submit}
-                    className="mt-4 cursor-pointer flex w-full items-center justify-center rounded-sm bg-indigo-100
-                    hover:bg-indigo-200 px-8 py-4"
+                    className="mt-4 cursor-pointer flex w-60 items-center justify-center rounded-sm bg-indigo-100
+                    hover:bg-indigo-200 px-8 py-4 "
                 >
-                    <span className="text-sm font-bold"> Add to Cart </span>
+                    <span className="text-sm font-bold "> Add to Cart </span>
 
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -75,14 +80,15 @@ const ProductCard = ({ product }) => {
                         strokeWidth={1.5}
                         stroke="currentColor"
                         className="w-5 h-5 ml-2"
-                    >
+                        >
                         <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
                             d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                        />
+                            />
                     </svg>
                 </a>
+                            </FlyingButton>
             </div>
         </div>
     );

@@ -16,6 +16,7 @@ use App\Http\Controllers\ShipmentController;
 use App\Models\Product;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 use Inertia\Inertia;
 
 /*
