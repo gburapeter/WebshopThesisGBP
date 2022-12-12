@@ -1,7 +1,7 @@
 import { Square2StackIcon } from "@heroicons/react/20/solid";
 import { useForm } from "@inertiajs/inertia-react";
 import React from "react";
-
+import  FlyingButton  from 'react-flying-item';
 const ProductCard = ({ product }) => {
     const { data, setData, post, processing, errors } = useForm({
         id: product.id,
@@ -60,7 +60,7 @@ const ProductCard = ({ product }) => {
                 <p className="mt-2 text-sm font-medium text-gray-600">
                     ${product.product_price}
                 </p>
-
+                <FlyingButton flyingItemStyling={{ "zIndex": "10" }} src={product.image_path + "/Main.jpg"} animationDuration={1} targetTop={'-20%'} targetLeft={'80%'}>
                 <a
                     onClick={submit}
                     className="mt-4 cursor-pointer flex w-full items-center justify-center rounded-sm bg-indigo-100
@@ -82,7 +82,8 @@ const ProductCard = ({ product }) => {
                             d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
                         />
                     </svg>
-                </a>
+                    </a>
+                    </FlyingButton>
             </div>
         </div>
     );
