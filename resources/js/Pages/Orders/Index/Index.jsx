@@ -1,4 +1,5 @@
 import React from "react";
+import EmptyOrdersMessage from "./EmptyOrdersMessage";
 import { OrdersTable } from "./OrdersTable";
 
 const Index = ({ orders }) => {
@@ -14,7 +15,10 @@ const Index = ({ orders }) => {
                 </div>
                 <div className="bg-white px-4 md:px-10 pb-5 py-10 ">
                     <div className="overflow-x-auto">
-                        <OrdersTable orders={orders} />
+
+                        {orders.length ?
+                            <OrdersTable orders={orders} />
+                            : <EmptyOrdersMessage />}
                     </div>
                 </div>
             </div>

@@ -12,13 +12,15 @@ const EmptyCartMessage = ({ classAttr }) => {
                 Oops, your cart looks empty!
             </h1>
             <h1 className="text-md italic font-bold text-indigo-500">
-                Press on the cart to continue shopping
+                Press
+
+                <a className="text-red-500 hover:text-black" href={route("categories.show",[2])}> here</a> to continue shopping
             </h1>
 
             <img
-                onClick={changeRoute}
+
                 className=" w-1/3 cursor-pointer"
-                src="https://www.altclasses.in/assets/img/cart.gif"
+                src="/images/cartempty.gif"
             />
         </div>
     );

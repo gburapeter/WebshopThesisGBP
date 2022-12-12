@@ -4,7 +4,7 @@ import { Zoom } from "react-awesome-reveal";
 import Breadcrumb from "./components/Breadcrumb";
 import { ProductMedia } from "./components/ProductMedia";
 import TechnicalSpecifications from "./components/TechnicalSpecifications";
-
+import  FlyingButton  from 'react-flying-item';
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
@@ -59,17 +59,20 @@ const Show = ({ myProduct, category }) => {
                                 </a>
                             </div>
                         </div>
+                        <FlyingButton flyingItemStyling={{ "zIndex": "10" }} src={myProduct.image_path + "/Main.jpg"} animationDuration={1} targetTop={'-20%'} targetLeft={'80%'}>
 
-                        <button
+                        <a
                             onClick={() =>
                                 Inertia.post(
                                     route("cartitems.store", [myProduct])
                                 )
                             }
-                            className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-300 py-3 px-8 text-base font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                            className="mt-10 flex w-80 items-center justify-center rounded-md border border-transparent bg-indigo-500 py-3 px-8 text-base font-medium text-white hover:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
                             Add to cart
-                        </button>
+                                </a>
+
+                        </FlyingButton>
                     </div>
 
                     <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">

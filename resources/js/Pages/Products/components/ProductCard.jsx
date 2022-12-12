@@ -63,8 +63,8 @@ const ProductCard = ({ product }) => {
                 <FlyingButton flyingItemStyling={{ "zIndex": "10" }} src={product.image_path + "/Main.jpg"} animationDuration={1} targetTop={'-20%'} targetLeft={'80%'}>
                 <a
                     onClick={submit}
-                    className="mt-4 cursor-pointer flex w-60 items-center justify-center rounded-sm bg-indigo-100
-                    hover:bg-indigo-200 px-8 py-4"
+                    className="mt-4 cursor-pointer text-gray-800 flex w-60 items-center justify-center rounded-sm bg-indigo-200
+                    hover:bg-indigo-300 hover:text-black px-8 py-4"
                 >
                     <span className="text-sm font-bold"> Add to Cart </span>
 

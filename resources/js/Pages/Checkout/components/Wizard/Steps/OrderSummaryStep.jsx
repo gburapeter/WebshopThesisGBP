@@ -10,6 +10,7 @@ import { PayPalButtons } from "@paypal/react-paypal-js";
 import { Inertia } from "@inertiajs/inertia";
 
 const OrderSummaryStep = (props) => {
+    const { cartProducts, cartTotal } = usePage().props;
     const submit = (e) => {
         e.preventDefault();
 
@@ -55,7 +56,6 @@ const OrderSummaryStep = (props) => {
                 );
             });
     };
-    const { cartProducts, cartTotal } = usePage().props;
     return (
         <StepLayout>
             <div className="flex flex-col text-center w-full">
