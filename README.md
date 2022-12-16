@@ -7,12 +7,13 @@
   </a>
 </p>
 
-> The e-commerce webshop application created for my thesis work with Inertia: Laravel back-end and React.js front-end
+> The e-commerce webshop application created for my thesis work with Inertia: Laravel back-end and React.js front-end. It was deployed with the help of Digital Ocean + Laravel Forge. It is accessible on the link: http://138.197.180.179/
 
 ### 🏠 [Homepage](http://138.197.180.179/)
 
 ### ✨ [Demo](http://138.197.180.179/)
 
+To install it in a local environment:
 ## Install
 
 ```sh
