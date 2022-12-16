@@ -14,7 +14,7 @@
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
     @routes
     @viteReactRefresh
-    @vite('resources/js/app.jsx')
+    @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
     @inertiaHead
 </head>
 
