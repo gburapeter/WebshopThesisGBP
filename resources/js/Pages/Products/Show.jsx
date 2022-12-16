@@ -4,7 +4,7 @@ import { Zoom } from "react-awesome-reveal";
 import Breadcrumb from "./components/Breadcrumb";
 import { ProductMedia } from "./components/ProductMedia";
 import TechnicalSpecifications from "./components/TechnicalSpecifications";
-import  FlyingButton  from 'react-flying-item';
+
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
@@ -59,7 +59,6 @@ const Show = ({ myProduct, category }) => {
                                 </a>
                             </div>
                         </div>
-                        <FlyingButton flyingItemStyling={{ "zIndex": "10" }} src={myProduct.image_path + "/Main.jpg"} animationDuration={1} targetTop={'-20%'} targetLeft={'80%'}>
 
                         <a
                             onClick={() =>
@@ -72,7 +71,6 @@ const Show = ({ myProduct, category }) => {
                             Add to cart
                                 </a>
 
-                        </FlyingButton>
                     </div>
 
                     <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">
