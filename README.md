@@ -14,23 +14,38 @@
 ### ✨ [Demo](http://138.197.180.179/)
 
 To install it in a local environment:
-## Install
+## Fetch the github project
 
+## Initial setup
 ```sh
-npm install or yarn
+npm install 
+```
+or
+```sh
+yarn
+```
+## Run migrations and seeders
+```sh
+php artisan migrate:fresh --seed
 ```
 
-## Usage
+## Start Vite
+
+```sh
+npm run dev 
+```
+or
+```sh
+yarn dev
+```
+
+## Run local server
 
 ```sh
 php artisan serve
 ```
 
-## Run tests
 
-```sh
-npm run dev or yarn dev
-```
 
 ## Author
 
