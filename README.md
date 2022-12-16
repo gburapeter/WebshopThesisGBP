@@ -47,6 +47,13 @@ yarn dev
 php artisan serve
 ```
 
+## Register or login with test user
+
+```sh
+User: admin@gmail.com
+PW: admin
+```
+
 
 
 ## Author
