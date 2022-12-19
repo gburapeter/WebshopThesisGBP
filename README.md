@@ -56,7 +56,8 @@ PW: admin
 
 ## TODOs
 
-Paypal works only in local environment (Paypal developer setup)
+* Paypal works only in local environment (Paypal developer setup)
+* Add more products
 
 ## Author
 
