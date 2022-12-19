@@ -15,7 +15,7 @@
 
 ### ✨ [Demo](http://138.197.180.179/)
 
-To install it in a local environment:
+To install it in a local environment: 
 ## Fetch the github project
 
 ## Initial setup
@@ -54,7 +54,9 @@ User: admin@gmail.com
 PW: admin
 ```
 
+## TODOs
 
+Paypal works only in local environment (not production)
 
 ## Author
 
