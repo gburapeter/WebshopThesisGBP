@@ -125,7 +125,7 @@
                     "category_name": "Gaming chairs",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":""
+                    "image_path":"images/ProductCategories/Gaming/chairs.jpg"
 
 
                 },
@@ -133,14 +133,14 @@
                     "category_name": "Gaming computers",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":""
+                    "image_path":"images/ProductCategories/Gaming/pcs.jpg"
 
                 },
                 {
                     "category_name": "Mouses",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":""
+                    "image_path":"images/ProductCategories/Gaming/mouses.jpg"
 
 
                 },
@@ -148,7 +148,7 @@
                     "category_name": "Keyboards",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":""
+                    "image_path":"images/ProductCategories/Gaming/keyboards.jpg"
 
 
                 },
@@ -156,7 +156,7 @@
                     "category_name": "Headsets",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":""
+                    "image_path":"images/ProductCategories/Gaming/headsets.jpg"
 
 
                 }
@@ -172,7 +172,7 @@
                     "category_name": "Xbox consoles",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":""
+                    "image_path":"images/ProductCategories/Console/xbox.jpg"
 
 
                 },
@@ -180,14 +180,14 @@
                     "category_name": "Play station consoles",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":""
+                    "image_path":"images/ProductCategories/Console/ps.jpg"
 
                 },
                 {
                     "category_name": "Xbox games",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":""
+                    "image_path":"images/ProductCategories/Console/xboxgames.jpg"
 
 
                 },
@@ -195,7 +195,7 @@
                     "category_name": "Play station games",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                    "image_path":""
+                    "image_path":"images/ProductCategories/Console/psgames.jpg"
 
 
                 },
@@ -203,8 +203,7 @@
                     "category_name": "Console accessories",
                     "category_code": "fa-solid fa-apple-whole",
                     "category_description": "home",
-                     "image_path":""
-
+                    "image_path":"images/ProductCategories/Console/console.jpg"
 
                 }
               ]
@@ -218,14 +217,14 @@
                     "category_name": "Drones",
                     "category_code": "DR",
                     "category_description": "home",
-                    "image_path":"https://www5.djicdn.com/cms/uploads/7a800dc93ffa6a45af04c2b49a75a4af.png"
+                    "image_path":"images/ProductCategories/Photo/drones.jpg"
 
                 },
                 {
                     "category_name": "Digital cameras",
                     "category_code": "DC",
                     "category_description": "home",
-                    "image_path":"https://petapixel.com/assets/uploads/2022/01/The-Best-Used-Digital-Cameras-to-Buy-in-2022.jpg"
+                    "image_path":"images/ProductCategories/Photo/cameras.jpg"
 
                 }
 

@@ -40,6 +40,23 @@
             "image_path": "images/Products/Laptops/Apple/MacProM1/",
             "product_category_id": "2"
         },
+
+        {
+            "product_name": "MacBook Pro 13-in. (Intel, 2019)",
+            "product_price": "1499",
+            "sku": "1",
+            "description": "",
+            "image_path": "images/Products/Laptops/Apple/MacProIntel13/",
+            "product_category_id": "2"
+        },
+        {
+            "product_name": "MacBook Pro 16-in. (Intel, 2019)",
+            "product_price": "1799",
+            "sku": "1",
+            "description": "",
+            "image_path": "images/Products/Laptops/Apple/MacProIntel16/",
+            "product_category_id": "2"
+        },
         {
             "product_name": "MacBook Pro 14-in. (M1, 2021)",
             "product_price": "1999",
