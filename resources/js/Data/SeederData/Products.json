@@ -72,6 +72,249 @@
             "description": "The MacBook Pro 2021 (16-inch) is a much-improved version of its predecessor that, when kitted out with the latest in Apple silicon, sets a new high-water mark for MacBook performance. Its beautiful new Liquid Retina XDR display makes just about everything you do on it look good, and the 1080p webcam up top helps you look your best on video calls with friends and colleagues. ",
             "image_path": "images/Products/Laptops/Apple/MacPro16M1/",
             "product_category_id": "2"
-        }
+        },
+        {
+            "product_name": "Dell XPS 13 Laptop",
+            "product_price": "999",
+            "sku": "2",
+            "description": "The Dell XPS 13 is a lightweight and powerful laptop, perfect for on-the-go productivity and entertainment. It features an 11th-generation Intel Core i7 processor, 16GB of RAM, and a 512GB SSD.",
+            "image_path": "images/Products/Laptops/Dell/XPS13/",
+            "product_category_id": "1"
+            },
+
+            {
+            "product_name": "Dell Inspiron 15 7000 Gaming Laptop",
+            "product_price": "1199",
+            "sku": "3",
+            "description": "The Dell Inspiron 15 7000 Gaming Laptop is perfect for both work and play. It boasts an NVIDIA GeForce GTX 1650 graphics card, an 8th-generation Intel Core i5 processor, and 8GB of RAM.",
+            "image_path": "images/Products/Laptops/Dell/Inspiron15Gaming/",
+            "product_category_id": "4"
+            },
+
+            {
+            "product_name": "Dell Alienware Area 51 R5 Gaming Desktop",
+            "product_price": "1999",
+            "sku": "4",
+            "description": "The Dell Alienware Area 51 R5 Gaming Desktop is a high-performance gaming machine, featuring an Intel Core i7 processor, 16GB of RAM, and an NVIDIA GeForce GTX 1080 graphics card. It's perfect for tackling the most demanding games.",
+            "image_path": "images/Products/Desktops/Dell/AlienwareArea51R5/",
+            "product_category_id": "4"
+            },
+
+            {
+            "product_name": "Dell UltraSharp U2415 24-Inch Monitor",
+            "product_price": "299",
+            "sku": "5",
+            "description": "The Dell UltraSharp U2415 is a high-quality 24-inch monitor, perfect for home or office use. It features a Full HD 1080p resolution, a wide viewing angle, and extensive connectivity options.",
+            "image_path": "images/Products/Monitors/Dell/UltraSharpU2415/",
+            "product_category_id": "4"
+            },
+
+            {
+            "product_name": "Dell Inspiron 27 7000 All-in-One Desktop",
+            "product_price": "799",
+            "sku": "6",
+            "description": "The Dell Inspiron 27 7000 All-in-One Desktop is a compact and powerful computer, perfect for small spaces. It features an 8th-generation Intel Core i5 processor, 8GB of RAM, and a 1TB hard drive.",
+            "image_path": "images/Products/Desktops/Dell/Inspiron27AllInOne/",
+            "product_category_id": "4"
+            },
+            {
+                "product_name": "Dell Precision 3540 Mobile Workstation",
+                "product_price": "1299",
+                "sku": "7",
+                "description": "The Dell Precision 3540 Mobile Workstation is a powerful laptop designed for professionals. It features an 8th-generation Intel Core i7 processor, 16GB of RAM, and a 512GB SSD. It's perfect for handling demanding workloads on the go.",
+                "image_path": "images/Products/Desktops/Dell/Inspiron27AllInOne/",
+                "product_category_id": "4"
+
+            },
+            {
+                "product_name": "Asus ROG Zephyrus S GX701 Gaming Laptop",
+                "product_price": "1799",
+                "sku": "8",
+                "description": "The Asus ROG Zephyrus S GX701 is a high-performance gaming laptop, featuring an Intel Core i7 processor, 16GB of RAM, and an NVIDIA GeForce RTX 2080 graphics card. It's perfect for tackling the most demanding games on the go.",
+                "image_path": "images/Products/Laptops/Asus/ROGZephyrusSGX701/",
+                "product_category_id": "3"
+                },
+
+                {
+                "product_name": "Asus VivoBook S14 S432FA Laptop",
+                "product_price": "799",
+                "sku": "9",
+                "description": "The Asus VivoBook S14 S432FA is a lightweight and stylish laptop, perfect for everyday use. It features an 8th-generation Intel Core i5 processor, 8GB of RAM, and a 512GB SSD.",
+                "image_path": "images/Products/Laptops/Asus/VivoBookS14S432FA/",
+                "product_category_id": "3"
+                },
+
+                {
+                "product_name": "Asus Chromebook Flip C302CA Laptop",
+                "product_price": "499",
+                "sku": "10",
+                "description": "The Asus Chromebook Flip C302CA is a versatile laptop, perfect for both work and play. It features a 360-degree hinge, an Intel Core m3 processor, 4GB of RAM, and a 64GB eMMC storage.",
+                "image_path": "images/Products/Laptops/Asus/ChromebookFlipC302CA/",
+                "product_category_id": "3"
+                },
+
+                {
+                "product_name": "Asus ZenBook 13 UX333FA Laptop",
+                "product_price": "999",
+                "sku": "11",
+                "description": "The Asus ZenBook 13 UX333FA is a lightweight and powerful laptop, perfect for on-the-go productivity. It features an 8th-generation Intel Core i5 processor, 8GB of RAM, and a 512GB SSD.",
+                "image_path": "images/Products/Laptops/Asus/ZenBook13UX333FA/",
+                "product_category_id": "3"
+                },
+
+                {
+                "product_name": "Asus ROG Strix GL702ZC Gaming Laptop",
+                "product_price": "1499",
+                "sku": "12",
+                "description": "The Asus ROG Strix GL702ZC is a high-performance gaming laptop, featuring an AMD Ryzen 7 processor, 16GB of RAM, and an AMD Radeon RX 580 graphics card. It's perfect for tackling the most demanding games on the go.",
+                "image_path": "images/Products/Laptops/Asus/ROGStrixGL702ZC/",
+                "product_category_id": "3"
+                },
+                {
+                    "product_name": "HP Spectre x360 13-ap0013dx Laptop",
+                    "product_price": "1199",
+                    "sku": "14",
+                    "description": "The HP Spectre x360 13-ap0013dx is a stylish and powerful laptop, perfect for on-the-go productivity. It features an 8th-generation Intel Core i7 processor, 16GB of RAM, and a 512GB SSD.",
+                    "image_path": "images/Products/Laptops/HP/Spectrex360/",
+                    "product_category_id": "5"
+                    },
+
+                    {
+                    "product_name": "HP Pavilion Gaming 15-ec0013dx Laptop",
+                    "product_price": "799",
+                    "sku": "15",
+                    "description": "The HP Pavilion Gaming 15-ec0013dx is a powerful gaming laptop, featuring an AMD Ryzen 5 processor, 8GB of RAM, and an NVIDIA GeForce GTX 1650 graphics card. It's perfect for tackling the most demanding games on the go.",
+                    "image_path": "images/Products/Laptops/HP/PavilionGaming15/",
+                    "product_category_id": "5"
+                    },
+
+                    {
+                    "product_name": "HP Envy x360 15-dr0012dx Laptop",
+                    "product_price": "999",
+                    "sku": "16",
+                    "description": "The HP Envy x360 15-dr0012dx is a versatile laptop, perfect for both work and play. It features a 360-degree hinge, an 8th-generation Intel Core i5 processor, 8GB of RAM, and a 256GB SSD.",
+                    "image_path": "images/Products/Laptops/HP/Envyx360/",
+                    "product_category_id": "5"
+                    },
+
+                    {
+                    "product_name": "HP Elitebook x360 1030 G3 Laptop",
+                    "product_price": "1299",
+                    "sku": "17",
+                    "description": "The HP Elitebook x360 1030 G3 is a high-performance laptop, perfect for professionals. It features an 8th-generation Intel Core i7 processor, 16GB of RAM, and a 512GB SSD.",
+                    "image_path": "images/Products/Laptops/HP/Elitebookx360/",
+                    "product_category_id": "5"
+                    },
+
+                    {
+                    "product_name": "HP Omen 15-dc0045nr Laptop",
+                    "product_price": "1499",
+                    "sku": "18",
+                    "description": "The HP Omen 15-dc0045nr is a powerful gaming laptop, featuring an Intel Core i7 processor, 16GB of RAM, and an NVIDIA GeForce GTX 1660 Ti graphics card. It's perfect for tackling the most demanding games on the go.",
+                    "image_path": "images/Products/Laptops/HP/Omen15/",
+                    "product_category_id": "5"
+                    },
+
+                    {
+                    "product_name": "HP Chromebook 14a-na0003dx Laptop",
+                    "product_price": "499",
+                    "sku": "19",
+                    "description": "The HP Chromebook 14a-na0003dx is a lightweight and affordable laptop, perfect for everyday use. It features an AMD A4 processor, 4GB",
+                    "image_path": "images/Products/Laptops/HP/Omen15/",
+                    "product_category_id": "5"
+                    },
+                    {
+                        "product_name": "Lenovo ThinkPad X1 Carbon",
+                        "product_price": "1199",
+                        "sku": "2",
+                        "description": "The Lenovo ThinkPad X1 Carbon is a lightweight and durable laptop with a 14-inch Full HD display, 8th generation Intel Core i5 processor, and 8GB of RAM. It's perfect for business professionals on the go.",
+                        "image_path": "images/Products/Laptops/Lenovo/ThinkPadX1Carbon/",
+                        "product_category_id": "6"
+                      },
+                      {
+                        "product_name": "Lenovo IdeaPad 3",
+                        "product_price": "349",
+                        "sku": "3",
+                        "description": "The Lenovo IdeaPad 3 is a budget-friendly laptop with a 14-inch HD display, AMD Ryzen 3 processor, and 4GB of RAM. It's great for everyday use and basic productivity tasks.",
+                        "image_path": "images/Products/Laptops/Lenovo/IdeaPad3/",
+                        "product_category_id": "6"
+                      },
+                      {
+                        "product_name": "Lenovo Legion 5",
+                        "product_price": "799",
+                        "sku": "4",
+                        "description": "The Lenovo Legion 5 is a gaming laptop with a 15.6-inch Full HD display, 9th generation Intel Core i7 processor, and 16GB of RAM. It's capable of running the latest games at high settings and features NVIDIA GeForce graphics.",
+                        "image_path": "images/Products/Laptops/Lenovo/Legion5/",
+                        "product_category_id": "6"
+                      },
+                      {
+                        "product_name": "Lenovo Yoga C940",
+                        "product_price": "1199",
+                        "sku": "5",
+                        "description": "The Lenovo Yoga C940 is a 2-in-1 laptop with a 13.9-inch 4K touchscreen display, 10th generation Intel Core i7 processor, and 16GB of RAM. It's versatile and can be used as a traditional laptop or tablet, and features a built-in stylus for taking notes or drawing.",
+                        "image_path": "images/Products/Laptops/Lenovo/YogaC940/",
+                        "product_category_id": "6"
+                      },
+                      {
+                        "product_name": "Lenovo ThinkPad T14",
+                        "product_price": "849",
+                        "sku": "6",
+                        "description": "The Lenovo ThinkPad T14 is a business laptop with a 14-inch Full HD display, 10th generation Intel Core i5 processor, and 8GB of RAM. It's durable and reliable, with a long battery life and security features such as a fingerprint reader.",
+                        "image_path": "images/Products/Laptops/Lenovo/ThinkPadT14/",
+                        "product_category_id": "6"
+                      },
+                      {
+                        "product_name": "Huawei P40 Pro",
+                        "product_price": "799",
+                        "sku": "6",
+                        "description": "The Huawei P40 Pro is a high-end smartphone with a 6.58-inch OLED display, Kirin 990 5G chip, and 256GB of storage. It has a quad-camera system with 50MP ultra-wide, 40MP wide, 12MP telephoto, and 3D depth sensing lenses and 5G connectivity.",
+                        "image_path": "images/Products/Mobiles/Huawei/P40Pro/",
+                        "product_category_id": "1"
+                      },
+                      {
+                        "product_name": "Huawei Mate 40 Pro",
+                        "product_price": "999",
+                        "sku": "7",
+                        "description": "The Huawei Mate 40 Pro is a high-end smartphone with a 6.76-inch OLED display, Kirin 9000 chip, and 256GB of storage. It has a quad-camera system with 50MP ultra-wide, 20MP ultra-wide, 12MP telephoto, and 3D depth sensing lenses and 5G connectivity.",
+                        "image_path": "images/Products/Mobiles/Huawei/Mate40Pro/",
+                        "product_category_id": "1"
+                      },
+                      {
+                        "product_name": "Huawei MediaPad M5",
+                        "product_price": "399",
+                        "sku": "8",
+                        "description": "The Huawei MediaPad M5 is a tablet with a 10.8-inch IPS LCD display, Kirin 960 chip, and 32GB of storage. It has a single-camera system with a 13MP f/2.2 lens and supports the M-Pen lite stylus for taking notes or drawing.",
+                        "image_path": "images/Products/Mobiles/Huawei/MediaPadM5/",
+                        "product_category_id": "1"
+                      },
+                      {
+                        "product_name": "Huawei FreeBuds 3",
+                        "product_price": "149",
+                        "sku": "9",
+                        "description": "The Huawei FreeBuds 3 are true wireless earbuds with active noise cancellation, a 12mm dynamic driver, and up to 4 hours of playtime on a single charge. They have touch controls and support Bluetooth 5.1.",
+                        "image_path": "images/Products/Mobiles/Huawei/FreeBuds3/",
+                        "product_category_id": "1"
+                      },
+                      {
+                        "product_name": "Huawei Watch GT 2e",
+                        "product_price": "199",
+                        "sku": "10",
+                        "description": "The Huawei Watch GT 2e is a smartwatch with a 1.39-inch AMOLED display, Kirin A1 chip, and 4GB of storage. It has a continuous heart rate monitor, GPS, and over 100 workout modes, and supports music playback and notifications from your phone.",
+                        "image_path": "images/Products/Mobiles/Huawei/WatchGT2e/",
+                        "product_category_id": "1"
+                      },
+
+
+
+
+
+
+
+
+
+
+
+
+
     ]
 }
